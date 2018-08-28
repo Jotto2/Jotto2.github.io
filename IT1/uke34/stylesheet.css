@@ -23,14 +23,15 @@ body {
   padding: 10px;
   margin: auto;
   width: 475px;
+  //border: 1px solid black;
   padding-left: 0px;
 }
 
-ul {
+#ulMenu {
   list-style-type: none;
 }
 
-li {
+.liMenu {
   font-size: 19px;
   text-decoration: none;
 
@@ -38,15 +39,14 @@ li {
   border-radius: 0px;
 
   padding: 5px;
-  margin: auto;
   margin-left: 15px;
   display: inline;
 }
 
-li:hover {
+.liMenu:hover {
   background: #a0dec0;
   color: white;
-  border: 1px solid black;
+  border: 1px solid gray;
 }
 
 a:link {
@@ -65,9 +65,11 @@ a:link {
 
 #main {
   //border: 1px dotted red;
-  width: 850px;
-  margin: auto;
+
+  margin-left: 200px;
   margin-top: 50px;
+  display: inline-block;
+  width: 60%;
 }
 
 .post {
@@ -75,12 +77,42 @@ a:link {
   //border: 1px dotted green;
   background: #ffffff;
   margin-bottom: 50px;
-}
-
-#sidebar {
-  //border: 1px dotted blue;
+  padding-top: 10px;
 }
 
 p {
   font-size: 19px;
+}
+
+#sidebar {
+  //border: 1px dotted blue;
+  width: 20%;
+  position: absolute;
+  right: 40px;
+  display: inline;
+  margin: auto;
+  margin-top: 50px;
+  background: white;
+}
+
+#galleryImg {
+  width: 83%;
+  margin-left: 27px;
+  margin-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid gray;
+}
+
+#footer {
+  padding-top: 0px;
+  padding-left: 40px;
+  background: #404040;
+  height: 50px;
+}
+
+#footerText {
+  font-size: 15px;
+  color: white;
+  padding: 0;
+  margin-top: 0;
 }
