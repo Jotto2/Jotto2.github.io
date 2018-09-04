@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+
+    img {
+      width:100px;
+    }
+
+    </style>
+  </head>
+  <body>
+
+    <table border=1>
+      <thead>
+        <tr>
+          <th>Matrett</th>
+          <th>Land</th>
+          <th>Bilde</th>
+          <th>Lenke</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pizza</td>
+          <td>Italia</td>
+          <td><img src="pizza.jpg"></td>
+          <td><a href="https://www.matprat.no/pizza/">Matprat</a></td>
+        </tr>
+        <tr>
+          <td>Taco</td>
+          <td>Mexico</td>
+          <td><img src="taco.jpg"></td>
+          <td><a href="https://meny.no/oppskrifter/kjottdeig/Klassisk-norsk-taco--fersk-og-hjemmelaget/">Meny</a></td>
+        </tr>
+        <tr>
+          <td>Hamburger</td>
+          <td>USA</td>
+          <td><img src="hamburger.jpg"></td>
+          <td><a href="https://www.matprat.no/oppskrifter/familien/hamburger/">Matprat</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br><br>
+
+    <form action="registered.html">
+      <input type="text" placeholder="Name">
+      <br><br>
+      <input type="number" placeholder="Age">
+      <br><br>
+      <label>Choose your food</label>
+      <br>
+      <input type="radio" name="Mat" value="taco"><label>Pizza</label>
+      <br>
+      <input type="radio" name="Mat" value="taco"><label>Taco</label>
+      <br>
+      <input type="radio" name="Mat" value="taco"><label>Hamburger</label>
+      <br><br>
+      <input type="password" placeholder="Password">
+      <br><br>
+      <button>Register</button>
+    </form>
+  </body>
+</html>

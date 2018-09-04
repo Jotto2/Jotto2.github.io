@@ -1,0 +1,29 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
+
+html{
+  background: white;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+li{
+  display: inline;
+  margin: 10px;
+}
+
+ol {
+  padding: 0;
+}
+
+#inputAlder{
+  width: 140px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>Skjema</title>
+  </head>
+  <body>
+    <h1>Skjema</h1>
+
+    <ul>
+      <li><a href="index.html">Hjem</a></li>
+      <li><a href="tabeller.html">Tabeller</a></li>
+      <li><a href="skjema.html">Skjema</a></li>
+    </ul>
+
+    <form action="register.html">
+      <label><h2>Registrering</h2></label>
+
+      <label for="inputNavn">Navn:</label>
+      <input id="inputNavn" type="text" name="navn" placeholder="Skriv inn ditt navn" required>
+
+      <label for="inputAlder">Alder:</label>
+      <input id="inputAlder" type="number" name="alder" placeholder="Skriv inn din alder" required>
+
+      <br>
+
+      <label>Hva vil du spise?</label>
+      <input id="rbTaco" type="radio" name="rbMat" value="taco"><label for="rbTaco">Taco</label>
+      <input id="rbPizza" type="radio" name="rbMat" value="pizza"><label for="rbPizza">Pizza</label>
+      <input id="rbFisk" type="radio" name="rbMat" value="fisk"><label for="rbFisk">Fisk</label>
+
+      <br>
+
+      <button id="registerButton" type="submit" name="registreringsknapp">Send inn</button>
+    </form>
+
+    <br><br><br>
+
+    <form>
+        <input type="text" placeholder="Name" required></input>
+        <br><br>
+        <input type="text" placeholder="Username" required></input>
+        <br><br>
+        <input type="number" placeholder="Age" required></input>
+        <br><br>
+        <input type="color" placeholder="Eye color" required></input>
+        <br><br>
+        <input type="range" placeholder="" required></input>
+        <br><br>
+        <input type="date" placeholder="Birth date" required></input>
+        <br><br>
+        <input type="password" placeholder="Password" required></input>
+        <br><br>
+        <input type="radio" required></input>
+        <br><br>
+        <input type="checkbox" required></input>
+        <br><br>
+        <button>Register</button>
+    </form>
+
+    <form>
+    </form>
+
+  </body>
+</html>
