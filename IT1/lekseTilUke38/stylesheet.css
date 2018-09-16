@@ -1,3 +1,7 @@
+*{
+  /*border: 1px solid red;*/
+}
+
 body{
   background: #e9e9e9;
   margin: 0;
@@ -18,14 +22,18 @@ h1{
 ul{
   height: 40px;
   padding: 10px auto;
+  list-style: none;
+  margin: auto;
+  width: 750px;
 }
 
 li{
   display: inline;
   padding: 10px;
   margin: 10px;
+  margin-right: 0;
   margin-left: 0;
-  border-left: 1px solid black;
+  border-left: 0px solid black;
 }
 
 a{
@@ -35,6 +43,10 @@ a{
 
 a:hover{
   text-decoration: underline;
+}
+
+li:hover{
+  background: #e9e9e9;
 }
 
 main{
@@ -53,6 +65,19 @@ h2:hover{
   text-decoration: none;
 }
 
+img{
+  width: 100%;
+  margin: auto;
+  display: block;
+}
+
 footer{
-  background: gray;
+  background: #36393f;
+  padding: 5px;
+  color: #898a8e;
+  font-size: 12px;
+}
+
+p{
+  margin-bottom: 0;
 }
