@@ -8,8 +8,15 @@ p:hover{
 
 img{
   width: 300px;
+  transition: 10000s; /*Tid det tar å forstørre bildet*/
 }
 
 img::after{
-  content: "Dette bildet er beskyttet av håndverksloven.";
+  content: "Dette bildet er beskyttet av håndverksloven."; /*Funker ikke :(*/
+}
+
+img:hover{
+  transform: scale(1.5); /*Forstørrer bildet med 1,5*/
+  transform: translate(1000px, 400px);
+  transform: rotate(100000000deg);
 }

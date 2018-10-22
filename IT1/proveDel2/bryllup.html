@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="stilark.css">
+    <meta charset="utf-8">
+    <title>Bryllup - Motvind Eventbyrå</title>
+  </head>
+  <body>
+    <header>
+      <i><h1>Bryllup</h1></i>
+      <center><ul>
+        <a href="hovedside.html"><li>Hjem</li></a>
+        <a href="barnebursdag.html"><li>Barnebursdag</li></a>
+        <a href="bryllup.html"><li>Bryllup</li></a>
+        <a href="klassefest.html"><li>Klassefest</li></a>
+      </ul></center>
+    </header>
+
+    <main>
+      <img src="bilder/bryllup.jpg">
+      <form action="bryllup2.html">
+        <label>Navn:</label>
+        <input type="text" name="navn" placeholder="Ditt navn" required></input><br><br>
+        <label>Kommer du med eller uten følge?</label><br>
+        <label>Med</label><input type="radio" name="følge" value="med" required></input><br>
+        <label>Uten</label><input type="radio" name="følge" value="uten" required></input><br><br>
+        <label>Hva vil du spise?</label><br>
+        <select name="mat" required>
+          <option value="">Velg mat</option>
+          <option value="taco">Taco</option>
+          <option value="taco">Fisk</option>
+          <option value="taco">Pizza</option>
+        </select>
+        <br><br>
+        <button>Send inn</button>
+      </form>
+    </main>
+  </body>
+</html>
