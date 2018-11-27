@@ -1,0 +1,93 @@
+body{
+  background: #e9e9e9;
+  margin: 0;
+  font-family: arial;
+}
+
+h1{
+  margin: 50px;
+  font-size: 40px;
+}
+
+#main{
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-gap: 10px;
+  margin: 20px;
+  margin-bottom: 50px;
+}
+
+#lant{
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-gap: 10px;
+  margin: 20px;
+}
+
+#akt{
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-gap: 10px;
+  margin: 20px;
+}
+
+.grunnstoff{
+  background: white;
+  padding: 5px 10px;
+  color: black;
+  border-radius: 3px;
+}
+
+.col-span-18{
+  grid-column: span 18;
+}
+
+.col-span-16{
+  grid-column: span 16;
+}
+
+.col-span-10{
+  grid-column: span 10;
+}
+
+.col-span-2{
+  grid-column: span 2;
+}
+
+.col-span-1{
+  grid-column: span 1;
+}
+
+.invisible{
+  opacity: 0;
+}
+
+.ikke-metall{
+  background: lightblue;
+  color: black;
+}
+
+.halv-metall{
+  background: green;
+  color: black;
+}
+
+.metall{
+  background: darkblue;
+  color: white;
+}
+
+.ikke-metall:hover{
+  background: rgb(34, 122, 150);
+  color: white;
+}
+
+.halv-metall:hover{
+  background: rgb(13, 96, 26);
+  color: black;
+}
+
+.metall:hover{
+  background: #00004f;
+  color: white;
+}

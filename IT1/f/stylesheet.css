@@ -1,0 +1,10 @@
+div{
+  display: grid;
+  grid-template-columns: (2, 1fr);
+}
+
+.black{
+  background: black;
+  width: 10px;
+  height: 10px;
+}

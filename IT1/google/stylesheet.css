@@ -1,0 +1,76 @@
+*{
+  border: 0px dotted red;
+  font-family: arial;
+  color: black;
+  font-size: 14px;
+}
+
+body{
+  background: white;
+  margin: 0;
+}
+
+nav{
+
+}
+
+.nav_right{
+  list-style-type: none;
+  float: right;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+  color: gray;
+}
+
+.nav_right_li{
+  display: inline;
+  padding: 5px;
+}
+
+main{
+
+}
+
+#main_box{
+
+}
+
+#logo{
+
+}
+
+input{
+
+}
+
+.button{
+
+}
+
+footer{
+
+}
+
+#top_footer{
+
+}
+
+#bottom_footer{
+
+}
+
+.nav_left{
+  list-style-type: none;
+  float: left;
+}
+
+.nav_left_li{
+  display: inline;
+  padding: 5px;
+}
