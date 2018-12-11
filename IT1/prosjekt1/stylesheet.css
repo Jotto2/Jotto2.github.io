@@ -25,6 +25,7 @@ header{
 
 a{
   text-decoration: none;
+  transition: 0.25s;
 }
 
 #nav{
@@ -63,7 +64,7 @@ a{
 
 .trend{
   background: none;
-  width: 950px;
+  width: 1000px;
   margin: auto;
   margin-top: 150px;
 }
@@ -90,6 +91,7 @@ a{
   height: 200px;
   background-color: #e9e9e9;
   border: 1px solid #e9e9e9;
+  transition: 0.25s;
 }
 
 .gridElementBig{
@@ -97,6 +99,7 @@ a{
   grid-row: span 2;
   background-color: white;
   border: 1px solid #e9e9e9
+  transition: 0.25s;
 }
 
 .gridElementSmall{
@@ -105,6 +108,7 @@ a{
   background-color: white;
   border: 1px solid #e9e9e9;
   padding: 5px;
+  transition: 0.25s;
 }
 
 .gridElementTwo{
@@ -113,6 +117,7 @@ a{
   background-color: white;
   border: 1px solid #e9e9e9;
   padding: 5px;
+  transition: 0.25s;
 }
 
 .gridElementSmall:hover{
@@ -181,6 +186,7 @@ a{
   font-size: 20px;
   background-color: white;
   color: black;
+  transition: 0.25s;
 
 }
 
@@ -196,12 +202,73 @@ text-decoration: none;
 footer{
   background-color: rgb(56, 56, 56);
   color: white;
-  padding: 50px;
+  padding: 30px 50px;
   margin-top: 150px;
 }
 
+.productGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 15px;
+  margin: auto;
+  margin-top: 150px;
+  width: 1100px;
+  background-color: #e9e9e9;
+  padding: 25px;
+}
 
+.productImg{
+  width: 425px;
+  grid-column: span 2;
+  grid-row: span 1;
+  margin-right: 50px;
+}
 
+.productInfo{
+  grid-column: span 3;
+  grid-row: span 1;
+  margin-left: 50px;
+}
+
+.productList{
+  width: 500px;
+  padding-top: 25px;
+  border-top: 1px solid gray;
+}
+
+/*.productBox{
+  margin: auto;
+  margin-top: 150px;
+  width: 1100px;
+  background-color: #e9e9e9;
+  padding: 50px;
+}
+
+.productTop{
+  display: block;
+}
+
+.productImg{
+  width: 450px;
+}
+
+.productInfo{
+  display: inline;
+  float: right;
+  height: 750px;
+}
+
+.productList{
+  width: 500px;
+  padding-top: 25px;
+  border-top: 1px solid gray;
+}
+
+.productBottom{
+  display: block;
+  float: left;
+}*/
 
 
 .dropbtn {
@@ -211,6 +278,7 @@ footer{
     font-size: 16px;
     border: none;
     font-family: 'Raleway', sans-serif;
+    transition: 0.25s;
 }
 
 .dropdown {
@@ -233,6 +301,7 @@ footer{
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    transition: 0.25s;
 }
 
 .dropdown-content a:hover {
