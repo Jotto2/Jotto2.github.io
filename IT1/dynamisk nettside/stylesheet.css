@@ -1,0 +1,46 @@
+body{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  font-family: 'Happy Monkey', cursive;
+  background-image: url("https://i.ytimg.com/vi/tussa6KKCZU/maxresdefault.jpg");
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+section{
+  background: white;
+  padding: 10px;
+}
+
+@media(max-width:1400px){
+  body{
+    background-color: yellow;
+    background-image: url("https://cdn.pixabay.com/photo/2013/04/06/11/50/image-editing-101040_960_720.jpg");
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+}
+
+@media(max-width:1000px){
+  body{
+    background-color: green;
+    background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg?w968h681");
+    grid-template-columns: 1fr 1fr 1fr;
+}
+}
+
+@media(max-width:800px){
+  body{
+    background-color: red;
+    background-image: url("https://www.gettyimages.in/landing/assets/static_content/home/info-tabs3.jpg");
+    grid-template-columns: 1fr 1fr;
+}
+}
+
+@media(max-width:600px){
+  body{
+    background-color: blue;
+    background-image: url("https://www.elastic.co/assets/bltada7771f270d08f6/enhanced-buzz-1492-1379411828-15.jpg");
+    grid-template-columns: 1fr;
+  }
+}
