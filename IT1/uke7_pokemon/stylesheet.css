@@ -1,0 +1,58 @@
+#secAllPokemon{
+  /*display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  */
+}
+
+*{
+  font-family: 'Lato', sans-serif;
+}
+
+.theme{
+  float: right;
+}
+
+button{
+  border-radius: 2.5px;
+  border: black;
+  padding: 5px;
+  margin: 5px;
+}
+
+body{
+  margin: 0;
+  padding: 5px;
+  background-color: #e6e6e6;
+  transition: 0.5s;
+}
+
+header{
+  margin: 0 100px 0 100px;
+}
+
+img{
+  display: block;
+  margin: auto;
+}
+
+#logo{
+  width: 20%;
+  margin-top: 10px;
+}
+
+#secAllPokemon{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin: 0 100px 0 100px;
+}
+
+.pokemon:hover{
+  background-color: #f7f7f7;
+  transition: 0.5s;
+}
+
+.pokemon{
+  padding: 20px;
+  border-radius: 5px;
+}

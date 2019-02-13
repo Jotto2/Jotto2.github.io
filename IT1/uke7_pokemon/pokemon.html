@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokémon</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" type="image/png" href="https://seeklogo.com/images/P/pokeball-logo-DC23868CA1-seeklogo.com.png">
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAtCfjRi10kj5SgQdG6jRThDWGIBXcUl94",
+        authDomain: "pokemon-94117.firebaseapp.com",
+        databaseURL: "https://pokemon-94117.firebaseio.com",
+        projectId: "pokemon-94117",
+        storageBucket: "",
+        messagingSenderId: "212111219503"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <style>
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  </head>
+  <body>
+    <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2000px-International_Pok%C3%A9mon_logo.svg.png" alt="">
+
+    <header>
+      Sort By
+      <button type="button" name="button" onclick="visNummer()">Number</button>
+      <button type="button" name="button" onclick="visSterkeste()">Strong</button>
+      <button type="button" name="button" onclick="visSvakeste()">Weak</button>
+      <button class="theme" type="button" name="button" onclick="dark()">Dark Theme</button>
+      <button class="theme" type="button" name="button" onclick="light()">Light Theme</button>
+      </header>
+
+    <main>
+      <h4 id="load">Loading Pokémon...</h4>
+      <section id="secAllPokemon">
+      </section>
+    </main>
+
+    <script type="text/javascript">
+      const db = firebase.database(); // Lager en konstant som refererer til databasen
+      const p = db.ref("pokemon"); // Lager en konstant som refererer til "pokemon" i databasen
+      const css = document.querySelector("style"); // Lager en konstant som refererer til style-elementet i HTML-dokumentet
+      const load = document.querySelector("#load");
+
+      const secAllPokemon = document.querySelector("#secAllPokemon"); // Lager en konstant som refererer til seksjonen som skal inneholde pokémon
+
+      function visPokemon(snapshot){ // Lager en funksjon som skal vise pokémon
+        let key = snapshot.key; // Lager en variabel
+        let poke = snapshot.val();
+
+        secAllPokemon.innerHTML += `
+        <section class="pokemon">
+          <h3>${key}: ${poke.Name}</h3>
+          <img src='${poke["Image URL"]}'>
+          <h4>Type: ${poke["Type 1"]} and ${poke["Type 2"]}</h4>
+          <p>CP: ${poke["Max CP"]}</p>
+          <p>HP: ${poke["Max HP"]}</p>
+          </section>
+        `;
+
+        if(secAllPokemon != 0 ){
+          load.innerHTML = ``;
+        }
+      }
+
+      p
+      .orderByKey()
+      .limitToFirst(50)
+      .on("child_added",visPokemon);
+
+
+        function visSterkeste(){
+          secAllPokemon.innerHTML = ``;
+          p
+            .orderByChild("Max CP")
+            .limitToLast(50)
+            .on("child_added",visPokemon);
+        }
+
+        function visSvakeste(){
+          secAllPokemon.innerHTML = ``;
+          p
+            .orderByChild("Max CP")
+            .limitToFirst(50)
+            .on("child_added",visPokemon);
+        }
+
+        function visNummer(){
+          secAllPokemon.innerHTML = ``;
+          p
+            .orderByKey()
+            .limitToFirst(50)
+            .on("child_added",visPokemon);
+        }
+
+        const dark = () => {
+          css.innerHTML = `
+            body{
+              background-color: #262626;
+              color: white;
+            }
+          .pokemon:hover{
+            background-color: #373737;
+          }
+          `;
+        }
+
+        function light(){
+          css.innerHTML = `
+            body{
+              background-color: #e6e6e6;
+              color: black;
+            }
+
+            .pokemon:hover{
+              background-color: #f7f7f7;
+            }
+            `;
+        }
+
+    </script>
+
+  </body>
+</html>

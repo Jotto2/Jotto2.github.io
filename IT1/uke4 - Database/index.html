@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Firebase Database</title>
+<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD1P0LnTAv9I78MTbGPOdq_fjGt8zTMb8o",
+    authDomain: "database-uke4.firebaseapp.com",
+    databaseURL: "https://database-uke4.firebaseio.com",
+    projectId: "database-uke4",
+    storageBucket: "database-uke4.appspot.com",
+    messagingSenderId: "308020254903"
+  };
+  firebase.initializeApp(config);
+</script>
+
+  </head>
+  <body>
+    <p>Warning! This site contains JavaScript.</p>
+
+    <script type="text/javascript">
+
+      const db = firebase.database();
+      const kontaktliste = db.ref("kontaktliste"); //Refererer til kontaktliste i databasen
+
+      let kontakt = {
+        "firstName": "Donald",
+        "lastName": "Trump"
+      }
+
+      kontaktliste.push(kontakt);
+
+      function lesFraDb(snapshot){
+        let nyKontakt = snapshot.val();
+        document.body.innerHTML += `<p>First name: ${nyKontakt.firstName}. Last name: ${nyKontakt.lastName}.</p>`;
+      }
+
+      kontaktliste.on("child_added",lesFraDb);
+
+
+      var first = prompt("What is your first name?")
+      var last = prompt("What is your last name?")
+
+      let navn = {
+        "firstName": first,
+        "lastName": last
+      }
+
+      kontaktliste.push(navn);
+
+      document.write(first + " " + last + " has been added to our database");
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Themes</title>
+    <style></style>
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+  <body>
+    <button type="button" name="button" onclick="dark()">Dark</button>
+    <button type="button" name="button" onclick="light()">Light</button>
+    <script type="text/javascript">
+      function dark(){
+        document.querySelector("style").innerHTML = `
+        body{
+          background-color: black;
+        }`;
+      }
+      function light(){
+        document.querySelector("style").innerHTML = `
+        body{
+          background-color: white;
+        }`;
+      }
+    </script>
+  </body>
+</html>

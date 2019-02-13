@@ -1,0 +1,42 @@
+{
+  "kontakter":{
+    "1":{
+      "firstName": "Julian",
+      "lastName": "Ottosen",
+      "telephone": 40049047,
+      "adress": "Kveldsroveien 5, 1368 Stabekk",
+      "age": 16,
+      "schools": ["Lysaker Skole", "Hundsund Ungdomsskole", "Sandvika Videregaende"],
+      "subPewdiepie": true,
+      "interests":{
+        "sports": ["volleyball"],
+        "gaming": ["Fortnite", "Brawl Stars"]
+      }
+    },
+    "2":{
+      "firstName": "Anders",
+      "lastName": "Krossen",
+      "telephone": 46648387,
+      "adress": "Fjordveien 63, Høvik",
+      "age": 16,
+      "schools": ["Ramstad Ungdommskole", "Sandvika Videregaende"],
+      "subPewdiepie": true,
+      "interests":{
+        "gaming": ["Fortnite", "Rocket League", "Overwatch"],
+        "other": ["betting"]
+      }
+    },
+    "3":{
+      "firstName": "Niklas",
+      "lastName": "Naper",
+      "telephone": 40409050,
+      "adress": "Kjeksla 4, 1397 Nesoya",
+      "age": 16,
+      "schools": ["Steinerskolen", "Sandvika Videregaende"],
+      "subPewdiepie": true,
+      "interests":{
+        "gaming": ["Fortnite", "Brawl Stars", "Geometry Dash"]
+      }
+    }
+  }
+}
