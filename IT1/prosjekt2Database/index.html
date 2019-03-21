@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDL7XcYRSYYMNbgrsE_1hk8ciLSwM6I844",
+      authDomain: "prosjekt2-database.firebaseapp.com",
+      databaseURL: "https://prosjekt2-database.firebaseio.com",
+      projectId: "prosjekt2-database",
+      storageBucket: "prosjekt2-database.appspot.com",
+      messagingSenderId: "804866777162"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <body>
+    <header>
+      <script>
+        /*
+        var d = new Date();
+        var print = "";
+        var print = d.getDate() + "." + (d.getMonth()+1) + "." + d.getFullYear() + "<br>";
+        document.write(print);
+        document.write(d.getTime());
+        */
+      </script>
+      <img src="http://cdn.onlinewebfonts.com/svg/img_175491.png" width="0px">
+      <section id="headerLogIn">
+        <input class="logInInput" type="text" placeholder="Username">
+        <input class="logInInput" type="password" placeholder="Password">
+        <button class="logInButton" type="button">Log in</button>
+      </section>
+    </header>
+    <main>
+      <section id="mainLeft">
+        You are not currently signed in.
+        <button class="logInButton" type="button" id="registerButton">Register new account</button>
+      </section>
+      <section id="mainCenter">
+        <section id="postMaker">
+          <h2>Write a post</h2>
+          Create a post with text and/or an image:
+          <form>
+            <input id="postMakerText"type="text" rows="2" placeholder="What's on your mind?">
+            <input id="postMakerFile" type="file">
+            <input type="submit">
+          </form>
+        </section>
+        <section class="post">
+          <img class="postProfilePicture" src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
+          <section class="postInfo">
+            <h1 class="postName">anonymous32</h1>
+            <p class="PostDate">19.03.2019</p>
+          </section>
+          <p class="postText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <img class="like "src="https://cdn.worldvectorlogo.com/logos/facebook-like.svg">
+        </section>
+        <section class="post">
+            <img class="postProfilePicture" src="https://ih1.redbubble.net/image.445130512.1102/ap,550x550,12x12,1,transparent,t.u1.png">
+          <section class="postInfo">
+            <h1 class="postName">superdoge69</h1>
+            <p class="PostDate">14.02.2019</p>
+          </section>
+          <p class="postText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <img class="like "src="https://cdn.worldvectorlogo.com/logos/facebook-like.svg">
+        </section>
+      </section>
+      <section id="mainRight">
+        Sort by
+        <button type="button">Newest</button>
+        <button type="button">Oldest</button>
+        <button type="button">Pictures</button>
+      </section>
+    </main>
+  </body>
+</html>

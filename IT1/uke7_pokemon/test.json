@@ -1,0 +1,40 @@
+{
+  "family": {
+      "Julian": {
+        "Name": "Julian Ammouche Ottosen",
+        "Age": 17,
+        "Gender": "male",
+        "Hobbies": ["Gaming", "Guitar", "Programming", "Youtube", "Volleyball"],
+        "Lives": {
+          "Country": "Norway",
+          "Street": "Kveldsroveien",
+          "Housenumber": 5
+        }
+      },
+      "Jacob":{
+        "Name": "Jacob Ottosen Brun",
+        "Age": 8,
+        "Gender": "male",
+        "Hobbies": ["Football", "Bandy", "Roblox", "Lego"],
+        "Lives": {
+          "Country": "Norway",
+          "Street": "Kveldsroveien",
+          "Housenumber": 5
+        }
+      }
+  },
+  "dogs": {
+    "dog1": {
+      "name": "Leo",
+      "age": 10,
+      "type": "pomeranian",
+      "color": "lightbrown"
+    },
+    "dog2": {
+      "name": "Frida",
+      "age": 3,
+      "type": "french bulldog",
+      "color": "white and black"
+    }
+  }
+}

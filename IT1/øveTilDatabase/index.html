@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button type="button" name="button" onClick="visAlle()">Alle</button>
+    <button type="button" name="button" onClick="visBilligst()">Billigste</button>
+    <button type="button" name="button" onClick="visDyrest()">Dyreste</button>
+    <button type="button" name="button" onClick="yi()">yi</button>
+    <div id="ya">
+
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCGe_X9gZWEgEH_OqTwJB8WVO-OkAiKjUI",
+        authDomain: "ovenettbutikk.firebaseapp.com",
+        databaseURL: "https://ovenettbutikk.firebaseio.com",
+        projectId: "ovenettbutikk",
+        storageBucket: "ovenettbutikk.appspot.com",
+        messagingSenderId: "213365008921"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript">
+
+      const db = firebase.database();
+      const varer = db.ref("varer");
+      const ya = document.querySelector("#ya");
+
+      /*var i = prompt("hei");
+      var i = {
+        "li": 43,
+        "lo": "førtitre"
+      }
+      varer.push(i);*/
+
+      function visVare(snapshot){
+        var vare = snapshot.val();
+        ya.innerHTML +=
+        `<p>
+        Merke: ${vare.merke}<br>
+        Modell: ${vare.modell}<br>
+        Pris: ${vare.pris} kr<br>
+        </p>
+        `;
+      }
+
+      function visAlle(){
+        ya.innerHTML = ``
+        varer
+        .orderByChild("merke")
+        .on("child_added", visVare);
+      }
+
+      function visBilligst(){
+        ya.innerHTML = ``
+        varer
+        .orderByChild("pris")
+        .limitToFirst(5)
+        .on("child_added", visVare);
+      }
+
+      function visDyrest(){
+        ya.innerHTML = ``
+        varer
+        .orderByChild("pris")
+        .limitToLast(5)
+        .on("child_added", visVare);
+      }
+
+      function yi(){
+        ya.innerHTML = ``
+        varer
+        .orderByKey()
+        .limitToLast(5)
+        .on("child_added", visVare);
+      }
+
+    </script>
+  </body>
+</html>

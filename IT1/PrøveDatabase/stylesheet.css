@@ -1,0 +1,63 @@
+/* Alle elementene */
+*{
+  font-family: arial;
+}
+
+body{
+  background-color: #e6e6e6;
+  color: black;
+  transition: 0.75s
+}
+
+header{
+  margin: 0 200px;
+}
+
+/* Den øverste ittelen på siden */
+#tittel{
+  text-align: center;
+  padding: 30px 0;
+}
+
+/* Knappene */
+button{
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+/* Temaknappene */
+.tema{
+  float: right;
+}
+
+/* Overskriften over dyrene */
+#overskrift{
+  text-align: center;
+  font-size: 25px;
+  padding: 20px 0 0 0;
+  text-decoration: underline;
+}
+
+main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+  padding: 20px 200px;
+}
+
+/* Hvert dyr-element */
+.dyr{
+  grid-column: 1fr;
+  grid-row: 1fr;
+  padding: 0 20px;
+  border-radius: 5px;
+}
+
+/* Når man hovrer musen over dyr-elementet */
+.dyr:hover{
+  background-color: #f7f7f7;
+}
+
+img{
+  width: 100%;
+}

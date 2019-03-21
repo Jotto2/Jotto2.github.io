@@ -1,0 +1,16 @@
+{
+  "posts":{
+    "001":{
+      "time": "",
+      "profile": "",
+      "text": "",
+      "imageURL":"",
+    }
+  },
+  "profiles":{
+    "001":{
+      "name": "",
+      "posts":
+    }
+  }
+}

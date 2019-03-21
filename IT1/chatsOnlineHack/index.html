@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyA-5xuWezGFCfpgPq70P2npyfH_2hfjJNE",
+        authDomain: "test-120220.firebaseapp.com",
+        databaseURL: "https://test-120220.firebaseio.com",
+        projectId: "test-120220",
+        storageBucket: "test-120220.appspot.com",
+        messagingSenderId: "266307446382"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script type="text/javascript">
+      let christian = {
+        "displayName": "Christian Rapp",
+        "photoURL": "https://lh6.googleusercontent.com/-N0RZDZrHBhA/AAAAAAAAAAI/AAAAAAAADf4/3GYm5Xzedu0/photo.jpg",
+        "uid": "uIH4RqBtCMfyOtAFPtRMcqqwzY72",
+        "text": "drit så inn i helvete i"}
+
+      let niklas = {
+        "displayName": "Crispy Chrusher",
+        "photoURL": "https://lh3.googleusercontent.com/-5ZWpHdcs_-U/AAAAAAAAAAI/AAAAAAAAAAA/ACevoQOBu6sHoUVxAXcdrOo1LOfHybHpDg/mo/photo.jpg",
+        "uid": "uonfio398ne08238fD",
+        "text": "Jeg elsker fortnite"}
+
+      let mekkel = {
+        "displayName": "Mekkel Rustbergaard",
+        "photoURL": "https://lh6.googleusercontent.com/-cCOuSrlkuNA/AAAAAAAAAAI/AAAAAAAAAAg/FiMUFTqRIwg/photo.jpg",
+        "_class": "others",
+        "text": "går det bra med deg eller?"}
+
+        let fJulian = {
+          "displayName": "Julian Ottosen",
+          "photoURL": "https://lh5.googleusercontent.com/-zRc7oFKjj-U/AAAAAAAAAAI/AAAAAAAAADs/LoVbdr_bQZE/photo.jpg",
+          "uid": "696969696969696969696969696969696969696969696969696969",
+          "text": "."}
+
+      let defaultS = {
+        "displayName": "Default",
+        "photoURL": "https://pm1.narvii.com/6914/e6ae99a3d2137dcf43fa79d6252e0b0118b72a18r1-474-474v2_hq.jpg",
+        "_class": "others",
+        "text": "Where we droppin' bois?"}
+
+        let ninja = {
+          "displayName": "Ninja",
+          "photoURL": "https://www.tubefilter.com/wp-content/uploads/2018/10/ninja-burnout.jpg",
+          "_class": "others",
+          "text": "We're droppin' at the mall so I can kick another pregnant muslim in the stomach. #bombdefuse #victoryRoyale #epicWin #doubleKill"}
+
+        let aaron = {
+          "displayName": "Aaron",
+          "photoURL": "https://yt3.ggpht.com/a-/AAuE7mB-mFKk_vPzY1-QSCwl10q_zrPDPVlClYwZkA=s88-mo-c-c0xffffffff-rj-k-no",
+          "uid": "uIHee556e5eFPtRMcqqwzY72",
+          "text": "Vil du sloss?"}
+      firebase.database().ref("myMessages").push(christian);
+    </script>
+  </body>
+</html>

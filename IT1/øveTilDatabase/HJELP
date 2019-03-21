@@ -1,0 +1,6 @@
+SPØRRINGER
+Gir oss de n første - limitToFirst(n)
+Gir osss de n siste - limitToLast(n)
+De som starter på en bestemt verdi - startAt(verdi)
+De som slutter på en bestemt verdi - endAt(verdi)
+De som er lik en bestemt verdi - equalTo(verdi)

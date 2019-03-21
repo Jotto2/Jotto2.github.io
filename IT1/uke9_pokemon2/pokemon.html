@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAtCfjRi10kj5SgQdG6jRThDWGIBXcUl94",
+        authDomain: "pokemon-94117.firebaseapp.com",
+        databaseURL: "https://pokemon-94117.firebaseio.com",
+        projectId: "pokemon-94117",
+        storageBucket: "",
+        messagingSenderId: "212111219503"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+  </head>
+  <body>
+    <main>
+      <header>
+        <button type="button" name="button" onclick="visAllePokemon()">Alle</button>
+        <button type="button" name="button" onclick="visSterkestePokemon()">Sterkeste</button>
+        <button type="button" name="button" onclick="visSvakestePokemon()">Svakeste</button>
+      </header>
+      <section id="secP">
+
+      </section>
+    </main>
+
+    <script type="text/javascript">
+      // referanser til HTML-elementer
+      const secPokemon = document.querySelector("secPokemon");
+
+
+      // referanser til firebase-databasen
+      const db = firebase.database();
+      const pokemon = db.ref("pokemon");
+
+
+      //p.on("child_added",genererHTML);
+
+      function visAllePokemon(){
+        pokemon.orderByKey().limitToLast(151).on("child_added",genererHTML);
+      }
+
+      function visSterkestePokemon(){
+        secPokemon.innerHTML = ``;
+        pokemon.orderByChild("Max CP").limitToLast(20).on("child_added",genererHTML);
+      }
+
+      function visSvakestePokemon(){
+        secPokemon.innerHTML = ``;
+        pokemon.orderByChild("Max CP").limitToFirst(20).on("child_added",genererHTML);
+      }
+
+      function genererHTML(snapshot){
+        let key = snapshot.key;
+        let pokemonObject = snapshot.val();
+        secP.innerHTML += `
+          <section class="pokemon">
+          <h3>${key}:${pokemonObject["Name"]}</h3>
+          <img src=${pokemonObject["Image URL"]}>
+          <p>Type: ${pokemonObject["Type 1"]}</p>
+          <p>Max HP: ${pokemonObject["Max HP"]}</p>
+          <p>Max CP: ${pokemonObject["Max CP"]}</p>
+          </section>
+          `
+        }
+
+    </script>
+  </body>
+</html>

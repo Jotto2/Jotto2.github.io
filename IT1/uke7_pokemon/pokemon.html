@@ -38,40 +38,44 @@
 
     <main>
       <h4 id="load">Loading Pokémon...</h4>
-      <section id="secAllPokemon">
-      </section>
+      <section id="secAllPokemon"></section>
     </main>
+    <footer></footer>
 
     <script type="text/javascript">
       const db = firebase.database(); // Lager en konstant som refererer til databasen
       const p = db.ref("pokemon"); // Lager en konstant som refererer til "pokemon" i databasen
-      const css = document.querySelector("style"); // Lager en konstant som refererer til style-elementet i HTML-dokumentet
-      const load = document.querySelector("#load");
+      const css = document.querySelector("style"); //// Lager en konstant som refererer til style-elementet i HTML-dokumentet
+      const load = document.querySelector("#load"); ////
+      const foot = document.querySelector("#footer"); ////
 
-      const secAllPokemon = document.querySelector("#secAllPokemon"); // Lager en konstant som refererer til seksjonen som skal inneholde pokémon
+      const secAllPokemon = document.querySelector("#secAllPokemon"); // Lager en konstant som refererer til seksjonen i HTML som skal inneholde pokémon
 
       function visPokemon(snapshot){ // Lager en funksjon som skal vise pokémon
-        let key = snapshot.key; // Lager en variabel
-        let poke = snapshot.val();
+        let key = snapshot.key; // Lager en variabel for primærnøklene
+        let poke = snapshot.val(); // Lager en variabel for hele databasen(?)
 
         secAllPokemon.innerHTML += `
         <section class="pokemon">
           <h3>${key}: ${poke.Name}</h3>
-          <img src='${poke["Image URL"]}'>
+          <a href='${poke["Image URL"]}'>
+            <img src='${poke["Image URL"]}'>
+          </a>
           <h4>Type: ${poke["Type 1"]} and ${poke["Type 2"]}</h4>
           <p>CP: ${poke["Max CP"]}</p>
           <p>HP: ${poke["Max HP"]}</p>
-          </section>
-        `;
+        </section>`;
 
-        if(secAllPokemon != 0 ){
+        if(secAllPokemon != null ){
           load.innerHTML = ``;
+        } else{
+          foot.innerHTML = 'footer';
         }
       }
 
       p
       .orderByKey()
-      .limitToFirst(50)
+      .limitToFirst(150)
       .on("child_added",visPokemon);
 
 
@@ -95,20 +99,23 @@
           secAllPokemon.innerHTML = ``;
           p
             .orderByKey()
-            .limitToFirst(50)
+            .limitToFirst(150)
             .on("child_added",visPokemon);
         }
 
-        const dark = () => {
+        const dark = () => { // Rapp sin måte å lage en funksjon på
           css.innerHTML = `
             body{
               background-color: #262626;
               color: white;
             }
-          .pokemon:hover{
-            background-color: #373737;
-          }
-          `;
+            .pokemon:hover{
+              background-color: #373737;
+            }
+            button{
+              background: #e6e6e6;
+              color: black:
+          }`;
         }
 
         function light(){
@@ -121,7 +128,11 @@
             .pokemon:hover{
               background-color: #f7f7f7;
             }
-            `;
+
+            button{
+              background: #262626;
+              color: white; // funker ikke
+            }`;
         }
 
     </script>

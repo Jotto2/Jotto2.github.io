@@ -17,6 +17,9 @@ button{
   border: black;
   padding: 5px;
   margin: 5px;
+  transition: 0.5s;
+  background: #262626;
+  color: white;
 }
 
 body{
@@ -55,4 +58,8 @@ img{
 .pokemon{
   padding: 20px;
   border-radius: 5px;
+}
+
+#load{
+  margin-left: 100px;
 }

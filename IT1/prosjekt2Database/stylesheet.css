@@ -1,0 +1,129 @@
+*{
+  font-family: 'Roboto', 'Quicksand', sans-serif;
+  box-sizing: border-box;
+}
+body{
+ margin: 0;
+}
+
+/* Headeren øverst på siden */
+header{
+  /*background: #9ad3de;
+  background:#33ff99;*/
+  background: white;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  /*border-bottom: 1.5px solid #00e673;*/
+  border-bottom: 1.5px solid #b3b3b3;
+}
+#headerLogIn{
+  float: right;
+  padding: 10px;
+}
+#registerButton{
+  margin-top: 30px;
+  margin-left: 40px;
+}
+.logInButton{
+  padding: 5px;
+}
+.logInInput{
+  padding: 5px;
+  margin-right:5px;
+}
+
+/* Main er delt inn i tre deler */
+main{
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+#mainLeft{
+  /*background: #e3e3e3;*/
+  background: #e9e9e9;
+  grid-column: span 2;
+  padding: 25px;
+}
+#mainCenter{
+  /*background:#c9c9c9;
+  background: #f2f2f2;*/
+  grid-column: span 6;
+}
+#mainRight{
+  /*background: #e3e3e3;*/
+  background: #e9e9e9;
+  grid-column: span 2;
+  padding: 25px;
+}
+
+/*  */
+#postMaker{
+  /*background: #ffe6e6;
+  background: #33ff99;*/
+  background: #f2f2f2;
+  width: 95%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  color: black;
+  /*text-shadow: 0.5px 0.5px 0.5px black;*/
+  border-bottom: 1.5px solid #00e673;
+  border-right: 1.5px solid #00e673;
+}
+h2{
+  margin: 0;
+}
+#postMakerText[type=text]{
+  /*background: #F7F4EA;*/
+  border: 1px solid #e9e9e9;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+input[type=file]{
+  /*background: #F7F4EA;*/
+  border: 1px solid #e9e9e9;
+  width: 20%;
+  padding: 10px;
+  margin-top: 10px;
+  /*color: #808080;*/
+}
+input[type=submit]{
+  /*background: #F7F4EA;*/
+  border: 1px solid #e9e9e9;
+  width: 15%;
+  padding: 10px;
+  margin-top: 10px;
+  float: right;
+  /*color: #808080;*/
+}
+
+.post{
+  /*background: #DED9E2;*/
+  background: white;
+  width: 95%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-bottom: 1.5px solid #e9e9e9;
+  border-right: 1.5px solid #e9e9e9;
+}
+.postProfilePicture{
+  width: 75px;
+  display: inline;
+}
+.postInfo{
+  display: inline;
+}
+.postName{
+
+}
+.postDate{
+
+}
+.like{
+  width: 40px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="sec">
+
+    </div>
+<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDr6HKazwjMAAb4qy3CJa1AVvdJur9Me5Y",
+    authDomain: "kontaktliste-96509.firebaseapp.com",
+    databaseURL: "https://kontaktliste-96509.firebaseio.com",
+    projectId: "kontaktliste-96509",
+    storageBucket: "kontaktliste-96509.appspot.com",
+    messagingSenderId: "220820071037"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript">
+  const db = firebase.database();
+  const kontakter = db.ref("kontakter");
+  const sec = document.querySelector("#sec");
+
+  function visKontakt(snapshot){
+    let kontakt = snapshot.val();
+    sec.innterHTML += `<p>
+    Epost: ${kontakt.epost}<br>
+    Telefon: ${kontakt.telefon}<br>
+    </p>`;
+  }
+//FUNKER IKKEEEEEEEEEEEEEEEEE
+  kontakter.on("child_added", visKontakt);
+</script>
+  </body>
+</html>
