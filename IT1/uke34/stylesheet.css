@@ -25,7 +25,8 @@ body {
   margin: auto;
   width: 100%;
   //border: 1px solid black;
-  padding-left: 0px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 #ulMenu {
