@@ -36,7 +36,7 @@
         <img id="mainLogo" src="pics/plantrLogo.png">
         <div class="homeIcon">
           <img src="pics/logoHover.png" class="iconHover">
-          <img src="pics/home1.png" class="home">
+          <img src="pics/home1.png" id="home">
         </div>
       </a>
 
@@ -60,21 +60,21 @@
             <button id="postSubmit" type="button">Plant</button>
           </form>
         </section>
-        <section class="post">
-          <section class="postInfo">
-            <img class="postProfilePicture" src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
-            <div class="postND">
-              <h1 class="postName">anonymous32</h1>
-              <p class="postDate">19.03.2019</p>
-            </div>
-          </section>
-          <p class="postText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>    
+        <section id="sortMobile">
+          Sort by
+          <button class="sortButton" type="button">Newest</button>
+          <button class="sortButton" type="button">Oldest</button>
+          <button class="sortButton" type="button">Pictures</button>
         </section>
         <section class="post">
           <section class="postInfo">
-            <img class="postProfilePicture" src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
+            <a href="#">
+              <img class="postProfilePicture" src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
+            </a>
             <div class="postND">
-              <h1 class="postName">anonymous32</h1>
+              <a href="#">
+                <h1 class="postName">anonymous32</h1>
+              </a>
               <p class="postDate">19.03.2019</p>
             </div>
           </section>
@@ -82,9 +82,27 @@
         </section>
         <section class="post">
           <section class="postInfo">
-            <img class="postProfilePicture" src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
+            <a href="#">
+              <img class="postProfilePicture" src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
+            </a>
             <div class="postND">
-              <h1 class="postName">anonymous32</h1>
+              <a href="#">
+                <h1 class="postName">anonymous32</h1>
+              </a>
+              <p class="postDate">19.03.2019</p>
+            </div>
+          </section>
+          <p class="postText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+        <section class="post">
+          <section class="postInfo">
+            <a href="#">
+              <img class="postProfilePicture" src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
+            </a>
+            <div class="postND">
+              <a href="#">
+                <h1 class="postName">anonymous32</h1>
+              </a>
               <p class="postDate">19.03.2019</p>
             </div>
           </section>
@@ -93,10 +111,13 @@
         </section>
       </section>
       <section id="mainRight">
-        Sort by
-        <button class="sortButton" type="button">Newest</button>
-        <button class="sortButton" type="button">Oldest</button>
-        <button class="sortButton" type="button">Pictures</button>
+        <section id="sortButtons">
+          Sort by
+          <button class="sortButton" type="button">Newest</button>
+          <button class="sortButton" type="button">Oldest</button>
+          <button class="sortButton" type="button">Pictures</button>
+        </section>
+
       </section>
 
     </main>

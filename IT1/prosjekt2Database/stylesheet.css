@@ -18,10 +18,9 @@ body{
  background: #e6ecf0;
 }
 
-/* Headeren øverst på siden */
+/* Start Header */
 header{
   background: white;
-  height: 60px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -30,41 +29,31 @@ header{
   border-bottom-right-radius: 10px;
   right: 0;
 }
-/* Logoen */
+/* Logo */
 #mainLogo{
   display: inline;
-  width: 125px;
-  margin-left: 10px;
-  margin-top: 2.5px;
 }
-/* Hjem-ikonet */
+/* Hjem-ikon */
 .homeIcon{
   display: inline;
   position: absolute;
-  margin-left: 50px;
-  margin-top: 10px;
 }
 .homeIcon img{
   position: absolute;
   top: 0;
   left: 0;
   overflow: hidden;
-  width: 40px;
-  height: 40px;
   opacity: 100;
 }
-.homeIcon .home{
+.homeIcon #home{
   z-index: 9999;
   cursor: pointer;
-  width: 25px;
-  height: 25px;
-  margin: 7.5px;
 }
 .homeIcon .iconHover{
   opacity: 0;
   transition: opacity .125s linear;
 }
-.homeIcon:hover .home{
+.homeIcon:hover #home{
   opacity: 100;
 }
 .homeIcon:hover .iconHover{
@@ -73,14 +62,8 @@ header{
 /* Login øverst på siden */
 #headerLogIn{
   float: right;
-  padding: 12.5px;
-}
-#registerButton{
-  margin-top: 30px;
-  margin-left: 40px;
 }
 .logInButton{
-  padding: 5px;
   border-radius: 10px;
   color: white;
   background: #7ce97c;
@@ -92,75 +75,53 @@ header{
   border: 1.5px solid #62b562;
 }
 .logInInput{
-  padding: 5px;
-  margin-right: 5px;
   border-radius: 10px;
   border: 1.5px solid #7ce97c;
 }
+/* Slutt Header */
 
-/* Main er delt inn i tre deler */
+/* Start Main*/
 main{
-  margin-top: 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 #mainLeft{
   background: #e6ecf0;
-  grid-column: span 2;
-  padding: 35px;
   background-image: linear-gradient(to top, #f1f6fa, #ace6ac);
   background-attachment: fixed;
 }
 #mainCenter{
-  grid-column: span 6;
   background-image: linear-gradient(to top, #f1f6fa, #ace6ac);
   background-attachment: fixed;
 }
 #mainRight{
   background: #e6ecf0;
-  grid-column: span 2;
-  padding: 25px;
   background-image: linear-gradient(to top, #f1f6fa, #ace6ac);
   background-attachment: fixed;
 }
 
-/*  */
+/* Der man lager post */
 #postMaker{
   background: white;
-  width: 95%;
   margin: auto;
-  margin-top: 20px;
-  padding: 20px;
   border-radius: 10px;
   color: black;
   border-bottom: 1.5px solid #b3b3b3;
   border-right: 1.5px solid #b3b3b3;
 }
 #postMakerTitle{
-  margin: 0;
   color: #7ce97c;
-
 }
 #postMakerText[type=text]{
   border: 1px solid #e9e9e9;
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
   border-radius: 10px;
 }
 input[type=file]{
   background: white;
   border: 1px solid #e9e9e9;
-  width: 20%;
-  padding: 10px;
-  margin-top: 10px;
   border-radius: 10px;
 }
 #postSubmit{
   background: white;
-  width: 100px;
-  padding: 10px;
-  margin-top: 10px;
   float: right;
   border-radius: 10px;
   background: #7ce97c;
@@ -172,52 +133,290 @@ input[type=file]{
   border: 1.5px solid #62b562;
 }
 
+/* Post Start */
 .post{
   background: white;
-  width: 95%;
   margin: auto;
-  margin-top: 20px;
-  padding: 20px;
   border: 1.5px solid #e9e9e9;
   border-radius: 10px;
   border-bottom: 1.5px solid #e9e9e9;
   border-right: 1.5px solid #e9e9e9;
 }
 .postProfilePicture{
-  width: 75px;
-  height: 75px;
   overflow: hidden;
-  grid-column: span 1;
-  grid-row: span 1;
 }
 .postInfo{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  height: 75px;
 }
 .postND{
-  grid-column: span 1;
-  grid-row: span 1;
 }
 .postName{
   color: #7ce97c;
-  margin: 10px 0 0 10px;
 }
 .postDate{
-  margin: 10px 0 0 10px;
   color: #a7a7a7;
 }
 .like{
-  width: 40px;
 }
+/* Post Slutt */
 
 .sortButton{
   border: 0;
   background: #ffffff;
-  padding: 5px;
   border-radius: 2px;
-  margin-left: 4px;
 }
 .sortButton:hover{
   background: #e9e9e9;
+}
+/* Slutt Main */
+
+/* Størrelser for 1920px skjermer */
+@media(max-width:1920px){
+  header{
+    height: 60px;
+  }
+  #mainLogo{
+    width: 125px;
+    margin-left: 12.5px;
+    margin-top: 3.5px;
+  }
+  .homeIcon{
+    display: inline;
+    margin-left: 50px;
+    margin-top: 10px;
+  }
+  .homeIcon img{
+    width: 40px;
+    height: 40px;
+  }
+  .homeIcon #home{
+    width: 25px;
+    height: 25px;
+    margin: 7.5px;
+  }
+  /* Login øverst på siden */
+  #headerLogIn{
+    padding: 15px;
+  }
+  #registerButton{
+    margin-top: 30px;
+    margin-left: 40px;
+  }
+  .logInButton{
+    padding: 5px;
+  }
+  .logInInput{
+    padding: 5px;
+    margin-right: 5px;
+  }
+
+  main{
+    margin-top: 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  #mainLeft{
+    grid-column: span 2;
+    padding: 35px;
+  }
+  #mainCenter{
+    grid-column: span 6;
+  }
+  #mainRight{
+    grid-column: span 2;
+    padding: 25px;
+  }
+
+  /* Der man lager post */
+  #postMaker{
+    width: 95%;
+    margin-top: 20px;
+    padding: 20px;
+  }
+  #postMakerTitle{
+    margin: 0;
+  }
+  #postMakerText[type=text]{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  input[type=file]{
+    width: 20%;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  #postSubmit{
+    width: 100px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  #sortMobile{
+    display: none;
+    margin: 20px 0 0 40px;
+  }
+  /* Post Start */
+  .post{
+    width: 95%;
+    margin-top: 20px;
+    padding: 20px;
+  }
+  .postProfilePicture{
+    width: 75px;
+    height: 75px;
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .postInfo{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 75px;
+  }
+  .postND{
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .postName{
+    margin: 10px 0 0 10px;
+  }
+  .postDate{
+    margin: 10px 0 0 10px;
+  }
+  .like{
+    width: 40px;
+  }
+  /* Post Slutt */
+
+  .sortButton{
+    padding: 5px;
+    margin-left: 4px;
+  }
+  #sortButtons{
+    display: block
+    ;
+  }
+}
+
+/* Størrelser for 1000px skjermer */
+@media(max-width:1000px){
+  header{
+    height: 60px;
+  }
+  #mainLogo{
+    width: 125px;
+    margin-left: 10px;
+    margin-top: 2.5px;
+  }
+  .homeIcon{
+    display: inline;
+    margin-left: 50px;
+    margin-top: 10px;
+  }
+  .homeIcon img{
+    width: 40px;
+    height: 40px;
+  }
+  .homeIcon #home{
+    width: 25px;
+    height: 25px;
+    margin: 7.5px;
+  }
+  /* Login øverst på siden */
+  #headerLogIn{
+    padding: 12.5px;
+  }
+  #registerButton{
+    margin-top: 30px;
+    margin-left: 40px;
+  }
+  .logInButton{
+    padding: 5px;
+  }
+  .logInInput{
+    padding: 5px;
+    margin-right: 5px;
+  }
+
+  main{
+    margin-top: 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  #mainLeft{
+    grid-column: span 2;
+    padding: 35px;
+  }
+  #mainCenter{
+    grid-column: span 6;
+  }
+  #mainRight{
+    grid-column: span 2;
+    padding: 25px;
+  }
+
+  /* Der man lager post */
+  #postMaker{
+    width: 95%;
+    margin-top: 20px;
+    padding: 20px;
+  }
+  #postMakerTitle{
+    margin: 0;
+  }
+  #postMakerText[type=text]{
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  input[type=file]{
+    width: 20%;
+    padding: 10px;
+    margin-top: 10px;
+  }
+  #postSubmit{
+    width: 100px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  #sortMobile{
+    display: block;
+    margin: 20px 0 0 40px;
+  }
+  /* Post Start */
+  .post{
+    width: 95%;
+    margin-top: 20px;
+    padding: 20px;
+  }
+  .postProfilePicture{
+    width: 75px;
+    height: 75px;
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .postInfo{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 75px;
+  }
+  .postND{
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .postName{
+    margin: 10px 0 0 10px;
+  }
+  .postDate{
+    margin: 10px 0 0 10px;
+  }
+  .like{
+    width: 40px;
+  }
+  /* Post Slutt */
+
+  #sortButtons{
+    display: none;
+  }
+  .sortButton{
+    padding: 5px;
+    margin-left: 4px;
+  }
 }
