@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Plantr | Register new Account</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+  </head>
+
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDL7XcYRSYYMNbgrsE_1hk8ciLSwM6I844",
+      authDomain: "prosjekt2-database.firebaseapp.com",
+      databaseURL: "https://prosjekt2-database.firebaseio.com",
+      projectId: "prosjekt2-database",
+      storageBucket: "prosjekt2-database.appspot.com",
+      messagingSenderId: "804866777162"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <body>
+    <header>
+      <script>
+        /*
+        var d = new Date();
+        var print = "";
+        var print = d.getDate() + "." + (d.getMonth()+1) + "." + d.getFullYear() + "<br>";
+        document.write(print);
+        document.write(d.getTime());
+        */
+      </script>
+      <a href="index.html">
+        <img id="mainLogo" src="pics/plantrLogo.png">
+        <div class="homeIcon">
+          <img src="pics/logoHover.png" class="iconHover">
+          <img src="pics/home1.png" id="home">
+        </div>
+      </a>
+
+      <section id="headerLogIn">
+        <input class="logInInput" type="text" placeholder="Username">
+        <input class="logInInput" type="password" placeholder="Password">
+        <button class="logInButton" type="button">Log in</button>
+      </section>
+    </header>
+    <main>
+      <section id="mainLeft"><br><script>document.write(window.outerWidth + "x" + window.outerHeight)</script></section>
+      <section id="registerCenter">
+        <section id="registerSection">
+          <h2>Create new Account</h2>
+          <form class="" action="index.html" method="post">
+            <div class="registerInput">Username <input type="text" name="" placeholder="username"></div>
+            <div class="registerInput">Password <input type="password" name="" placeholder="password"></div>
+            <div class="registerInput">Date of birth <input type="date" name="" placeholder="username"></div>
+            <div class="registerInput">Profile Picture <input type="file" name="" placeholder="username"></div>
+            <button type="button" name="button">Sign up</button>
+          </form>
+        </section>
+        </section>
+      <section id="mainRight"></section>
+
+    </main>
+
+  </body>
+</html>
