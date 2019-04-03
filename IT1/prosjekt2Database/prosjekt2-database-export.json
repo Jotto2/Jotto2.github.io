@@ -1,0 +1,46 @@
+{
+  "plantQuotes" : {
+    "001" : {
+      "quote" : "Folks are like plants; we all lean toward the light."
+    },
+    "002" : {
+      "quote" : "You gotta water your plants. Nobody can water them for you."
+    },
+    "003" : {
+      "quote" : "Plant and your spouse plants with you; weed and you weed alone."
+    },
+    "004" : {
+      "quote" : "Plants are not like us, and the more you study plants, the more different and deep ways you see that they are not like us."
+    },
+    "005" : {
+      "quote" : "Organisms don't think of CO2 as a poison. Plants and organisms that make shells, coral, think of it as a building block."
+    },
+    "006" : {
+      "quote" : "I am a gardener, I have a big green thumb, and I can take care of these plants really easily because they are all fake."
+    }
+
+  },
+  "posts" : {
+    "001" : {
+      "displayName" : "Team Plantr",
+      "photoURL" : "https://lh5.googleusercontent.com/-zRc7oFKjj-U/AAAAAAAAAAI/AAAAAAAAADs/LoVbdr_bQZE/photo.jpg",
+      "text" : "Welcome to Plantr,",
+      "timestamp" : 1551659047,
+      "uid" : "Team Plantr"
+    },
+    "002" : {
+      "displayName" : "Julian Ottosen",
+      "photoURL" : "https://lh5.googleusercontent.com/-zRc7oFKjj-U/AAAAAAAAAAI/AAAAAAAAADs/LoVbdr_bQZE/photo.jpg",
+      "text" : "Hei :)",
+      "timestamp" : 1554194330317,
+      "uid" : "stTuqVdkYZhC1Nmcu8rsRzd9XL22"
+    },
+    "003" : {
+      "displayName" : "doge",
+      "photoURL" : "https://i.redd.it/6lbx53qz7sn11.jpg",
+      "text" : "he's gonna beat yo ass",
+      "timestamp" : 1554194330318,
+      "uid" : "stTuqVdkYZhC1Nmcu8rsRzd9XL23"
+    }
+  }
+}

@@ -1,25 +1,46 @@
+// HTML-elementer
+const secAllPosts = document.querySelector("#allPosts");
+const postMakerForm = document.querySelector("#skjemaa");
+const inputText = document.querySelector("#inpMelding");
+const signedIn = document.querySelector("#signedInText");
 
-// HTML-elementer:
-const secMeldinger = document.querySelector("#secMeldinger");
-const skjema = document.querySelector("#skjema");
-const inpMelding = document.querySelector("#inpMelding");
+// Firebase
 const db = firebase.database();
-const meldinger = db.ref("minemessengermeldinger");
+const posts = db.ref("posts");
 
-// Definerer en bruker
+
+// Definerer user globalt, siden vi skal hente verdier fra den innloggede brukeren
 let user;
+
+// Timestamp funksjon
+function timeConverter(UNIX_timestamp){
+  var a = new Date(UNIX_timestamp * 1000);
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var year = a.getFullYear();
+  var month = months[a.getMonth()];
+  var date = a.getDate();
+  var hour = a.getHours();
+  var min = a.getMinutes();
+  var sec = a.getSeconds();
+  var time = date + ' ' + month + ' ' + hour + ':' + min;
+  return time;
+}
+
+// Her kommer det et par funksjoner
+// function lagreMelding(evt) {}
 function lagreMelding(evt) {
     evt.preventDefault();
-    // Legger inn tekst, user id , displayName, profilbilde og tidspunkt for når meldingen ble sendt
-    meldinger.push({
+    posts.push({
         uid: user.uid,
         displayName: user.displayName,
         photoURL: user.photoURL,
         timestamp: firebase.database.ServerValue.TIMESTAMP,
-        tekst: inpMelding.value
+        text: inpMelding.value
     });
-    skjema.reset();
+    postMakerForm.reset();
 }
+
+// function visMelding() {}
 function visMelding(snap) {
     const melding = snap.val();
     let klasse = "others";
@@ -32,38 +53,34 @@ function visMelding(snap) {
     if(melding.photoURL) {
         bilde = melding.photoURL;
     }
-    secMeldinger.innerHTML += `
-
-    <section class="post">
-      <section class="postInfo">
-        <a href="#">
-          <img class="postProfilePicture" src="${bilde}">
-        </a>
-        <div class="postND">
-          <a href="#">
-            <h1 class="postName">${melding.displayName}</h1>
-          </a>
-          <p class="postDate">${melding.timestamp}</p>
-        </div>
-      </section>
-      <p class="postText">${melding.tekst}</p>
-    </section>
-    `;
+    secAllPosts.innerHTML = `
+        <section class="post">
+          <section class="postInfo">
+            <a href="#">
+              <img class="postProfilePicture" src="${bilde}">
+            </a>
+            <div class="postND">
+              <a href="#">
+                <h1 class="postName">${melding.displayName}</h1>
+              </a>
+              <p class="postDate">${timeConverter(melding.timestamp)}</p>
+            </div>
+          </section>
+          <p class="postText">${melding.text}
+        </section>
+    ` + secAllPosts.innerHTML;
 }
+
 // Sjekker om vi er logget inn
 firebase.auth().onAuthStateChanged( newuser => {
     if (newuser) {
         // Setter user til den innloggede brukeren
         user = newuser;
         // Event Listeners
-        skjema.addEventListener("submit", lagreMelding);
-        meldinger.on("child_added", visMelding);
+        postMakerForm.addEventListener("submit", lagreMelding);
+        posts.on("child_added", visMelding);
+        signedIn.innerHTML = `You are signed in as ${user.displayName}`;
     } else {
-        document.body.innerHTML = `
-            <main class="notloggedin>
-                <h1>Du er ikke logget inn</h1>
-                <a href="register.html">Logg inn her</a>
-            </main>
-        `;
+        signedIn.innerHTML = `You are not signed in`;
     }
 });

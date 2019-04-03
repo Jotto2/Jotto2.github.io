@@ -40,12 +40,12 @@
       <section id="mainLeft"><br><script>document.write(window.outerWidth + "x" + window.outerHeight)</script></section>
       <section id="registerCenter">
 
-        <h1>Log in to the awesome web site</h1>
+
+
+        <h1>Log in to Plantr</h1>
         <div id="firebaseui-auth-container"></div>
 
-
-
-        <!-- LIM INN FIREBASE-KODEN DIN HER-->
+        <!-- LIM INN FIREBASE-KODEN DIN HER -->
         <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
         <script>
           // Initialize Firebase
@@ -59,8 +59,6 @@
           };
           firebase.initializeApp(config);
         </script>
-
-
         <!-- DENNE KODEN KOMMER FRA Firebase.auth -->
         <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
@@ -87,10 +85,11 @@
         // The start method will wait until the DOM is loaded.
         ui.start('#firebaseui-auth-container', uiConfig);
         </script>
-        </section>
+
+
+      </section>
       <section id="mainRight"></section>
 
     </main>
-
   </body>
 </html>
