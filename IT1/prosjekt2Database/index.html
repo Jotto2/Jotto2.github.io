@@ -23,15 +23,6 @@
 
   <body>
     <header>
-      <script>
-        /*
-        var d = new Date();
-        var print = "";
-        var print = d.getDate() + "." + (d.getMonth()+1) + "." + d.getFullYear() + "<br>";
-        document.write(print);
-        document.write(d.getTime());
-        */
-      </script>
       <a href="index.html">
         <img id="mainLogo" src="pics/plantrLogo.png">
         <div class="homeIcon">
@@ -48,21 +39,53 @@
     </header>
     <main>
       <section id="mainLeft">
-        You are not currently signed in.
-        <a href="register.html"><button class="logInButton" type="button" id="registerButton">Register new account</button></a>
-        <br><script>document.write(window.outerWidth)</script>
+        <section id="leftLogIn">
+          <script>
+          var d = new Date();
+          //var print = "";
+          //var print = d.getDate() + "." + (d.getMonth()+1) + "." + d.getFullYear() + "<br>";
+          //document.write(print);
+          var hour = d.getHours();
+          var greet = "<p id='greet'>";
+          if(hour<6){
+            greet += "Good night";
+          }else if(hour<12){
+            greet += "Good morning";
+          }else if(hour==12){
+            greet += "Good noon";
+          }else if(hour<17){
+            greet += "Good afternoon";
+          }else if(hour<8){
+            greet += "Good evening";
+          }else{
+            greet += "Good night";
+          }
+          greet += " :)</p>";
+          document.write(greet);
+          </script>
+          <p id="signedInText">You are not currently signed in.</p>
+          <a href="register.html"><button class="logInButton" type="button" id="registerButton">Sign in using Google</button></a>
+          <br><script>//document.write(window.outerWidth)</script>
+        </section>
       </section>
       <section id="mainCenter">
         <section id="postMaker">
-          <h2 id="postMakerTitle">Plant a post</h2>
+          <p id="postMakerTitle">Plant a post</p>
           <form>
-            <input id="postMakerText"type="text" rows="2" placeholder="What's on your mind?">
-            <input id="postMakerFile" name="file" type="file">
+            <input id="postMakerText" type="text" placeholder="What's on your mind?" autocomplete="off">
+            <input id="postMakerFile" type="file">
+            <label id="fileLabel" for="postMakerFile">
+              <!--<div id="uploadImageBox">
+                <img src="pics/uploadIconGreen.png" id="uploadG">
+                <img src="pics/uploadIconWhite.png" id="uploadW">
+              </div>-->
+              Choose an image
+            </label>
             <button id="postSubmit" type="button">Plant</button>
           </form>
         </section>
         <section id="sortMobile">
-          Sort by
+          Sort posts by
           <button class="sortButton" type="button">Newest</button>
           <button class="sortButton" type="button">Oldest</button>
           <button class="sortButton" type="button">Pictures</button>
@@ -112,8 +135,8 @@
         </section>
       </section>
       <section id="mainRight">
+        <p id="sortTextRight">Sort posts by</p>
         <section id="sortButtons">
-          Sort by
           <button class="sortButton" type="button">Newest</button>
           <button class="sortButton" type="button">Oldest</button>
           <button class="sortButton" type="button">Pictures</button>
