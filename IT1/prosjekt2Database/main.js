@@ -62,7 +62,7 @@ firebase.auth().onAuthStateChanged( newuser => {
         document.body.innerHTML = `
             <main class="notloggedin>
                 <h1>Du er ikke logget inn</h1>
-                <a href="login.html">Logg inn her</a>
+                <a href="register.html">Logg inn her</a>
             </main>
         `;
     }
