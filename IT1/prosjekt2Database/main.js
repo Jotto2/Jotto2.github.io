@@ -33,10 +33,21 @@ function visMelding(snap) {
         bilde = melding.photoURL;
     }
     secMeldinger.innerHTML += `
-        <div class="${klasse}">
-            <img src="${bilde}" title="${melding.displayName}">
-            <span>${melding.tekst}</span>
+
+    <section class="post">
+      <section class="postInfo">
+        <a href="#">
+          <img class="postProfilePicture" src="${bilde}">
+        </a>
+        <div class="postND">
+          <a href="#">
+            <h1 class="postName">${melding.displayName}</h1>
+          </a>
+          <p class="postDate">${melding.timestamp}</p>
         </div>
+      </section>
+      <p class="postText">${melding.tekst}</p>
+    </section>
     `;
 }
 // Sjekker om vi er logget inn
