@@ -5,23 +5,22 @@
     <link rel="stylesheet" href="stylesheet.css">
     <title>Plantr | Home</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
-    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
   </head>
 
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDL7XcYRSYYMNbgrsE_1hk8ciLSwM6I844",
-      authDomain: "prosjekt2-database.firebaseapp.com",
-      databaseURL: "https://prosjekt2-database.firebaseio.com",
-      projectId: "prosjekt2-database",
-      storageBucket: "prosjekt2-database.appspot.com",
-      messagingSenderId: "804866777162"
-    };
-    firebase.initializeApp(config);
-  </script>
-
   <body>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDL7XcYRSYYMNbgrsE_1hk8ciLSwM6I844",
+        authDomain: "prosjekt2-database.firebaseapp.com",
+        databaseURL: "https://prosjekt2-database.firebaseio.com",
+        projectId: "prosjekt2-database",
+        storageBucket: "prosjekt2-database.appspot.com",
+        messagingSenderId: "804866777162"
+      };
+      firebase.initializeApp(config);
+    </script>
     <header>
       <a href="index.html">
         <img id="mainLogo" src="pics/plantrLogo.png">
@@ -141,10 +140,9 @@
           <button class="sortButton" type="button">Oldest</button>
           <button class="sortButton" type="button">Pictures</button>
         </section>
-
       </section>
-
     </main>
 
+    <script src="./main.js"></script>
   </body>
 </html>

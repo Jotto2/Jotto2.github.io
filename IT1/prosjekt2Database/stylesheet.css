@@ -231,20 +231,21 @@
     background: #e9e9e9;
   }
   /* Slutt Main */
+
+  /* Register start */
+  #registerCenter{
+    grid-column: span 6;
+    background: white;
+    padding: 100px 10%;
+    height: 100%;
+  }
+
+  .registerInput{
+    display: block;
+    margin: 10px;
+  }
 }
 
-/* Register start */
-#registerCenter{
-  grid-column: span 6;
-  background: white;
-  padding: 100px 10%;
-  height: 700px;
-}
-
-.registerInput{
-  display: block;
-  margin: 10px;
-}
 /* Størrelser for 1920px skjermer (PC)*/
 @media(max-width:1920px){
   header{

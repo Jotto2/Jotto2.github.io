@@ -5,33 +5,23 @@
     <link rel="stylesheet" href="stylesheet.css">
     <title>Plantr | Register new Account</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
-    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
   </head>
 
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDL7XcYRSYYMNbgrsE_1hk8ciLSwM6I844",
-      authDomain: "prosjekt2-database.firebaseapp.com",
-      databaseURL: "https://prosjekt2-database.firebaseio.com",
-      projectId: "prosjekt2-database",
-      storageBucket: "prosjekt2-database.appspot.com",
-      messagingSenderId: "804866777162"
-    };
-    firebase.initializeApp(config);
-  </script>
-
   <body>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDL7XcYRSYYMNbgrsE_1hk8ciLSwM6I844",
+        authDomain: "prosjekt2-database.firebaseapp.com",
+        databaseURL: "https://prosjekt2-database.firebaseio.com",
+        projectId: "prosjekt2-database",
+        storageBucket: "prosjekt2-database.appspot.com",
+        messagingSenderId: "804866777162"
+      };
+      firebase.initializeApp(config);
+    </script>
     <header>
-      <script>
-        /*
-        var d = new Date();
-        var print = "";
-        var print = d.getDate() + "." + (d.getMonth()+1) + "." + d.getFullYear() + "<br>";
-        document.write(print);
-        document.write(d.getTime());
-        */
-      </script>
       <a href="index.html">
         <img id="mainLogo" src="pics/plantrLogo.png">
         <div class="homeIcon">
@@ -49,16 +39,54 @@
     <main>
       <section id="mainLeft"><br><script>document.write(window.outerWidth + "x" + window.outerHeight)</script></section>
       <section id="registerCenter">
-        <section id="registerSection">
-          <h2>Create new Account</h2>
-          <form class="" action="index.html" method="post">
-            <div class="registerInput">Username <input type="text" name="" placeholder="username"></div>
-            <div class="registerInput">Password <input type="password" name="" placeholder="password"></div>
-            <div class="registerInput">Date of birth <input type="date" name="" placeholder="username"></div>
-            <div class="registerInput">Profile Picture <input type="file" name="" placeholder="username"></div>
-            <button type="button" name="button">Sign up</button>
-          </form>
-        </section>
+
+        <h1>Log in to the awesome web site</h1>
+        <div id="firebaseui-auth-container"></div>
+
+
+
+        <!-- LIM INN FIREBASE-KODEN DIN HER-->
+        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyDL7XcYRSYYMNbgrsE_1hk8ciLSwM6I844",
+            authDomain: "prosjekt2-database.firebaseapp.com",
+            databaseURL: "https://prosjekt2-database.firebaseio.com",
+            projectId: "prosjekt2-database",
+            storageBucket: "prosjekt2-database.appspot.com",
+            messagingSenderId: "804866777162"
+          };
+          firebase.initializeApp(config);
+        </script>
+
+
+        <!-- DENNE KODEN KOMMER FRA Firebase.auth -->
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+        <script type="text/javascript">
+        // FirebaseUI config.
+        var uiConfig = {
+            signInSuccessUrl: 'index.html',
+            signInOptions: [
+            // Leave the lines as is for the providers you want to offer your users.
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ],
+            // tosUrl and privacyPolicyUrl accept either url string or a callback
+            // function.
+            // Terms of service url/callback.
+            tosUrl: '<your-tos-url>',
+            // Privacy policy url/callback.
+            privacyPolicyUrl: function() {
+            window.location.assign('<your-privacy-policy-url>');
+            }
+        };
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+        </script>
         </section>
       <section id="mainRight"></section>
 
