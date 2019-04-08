@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>img{width:500px;}</style>
+  </head>
+  <body>
+    <form id="skjema">
+      <input type="file" id="inpFil" class="button" required>
+      <input type="text" id="inpBildetekst" required placeholder="Hva har du tatt bilde av?">
+      <button class="button" type="submit">OK</button>
+    </form>
+    <section id="alleBildene"></section>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyD25DVBPYGC1R2hEzWN3D1LynU_SO0a0s4",
+        authDomain: "bildeblogg-35fd2.firebaseapp.com",
+        databaseURL: "https://bildeblogg-35fd2.firebaseio.com",
+        projectId: "bildeblogg-35fd2",
+        storageBucket: "bildeblogg-35fd2.appspot.com",
+        messagingSenderId: "234909850670"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script>
+      //Setter opp Firebase med database og storage
+      let database = firebase.database();//Lagring av data om bilder
+      let storage = firebase.storage();//Lagring av bilder
+      let bildedata = database.ref("bildedata");//Hvor vi lagrer data om bildene
+      let skjema = document.getElementById("skjema");
+      let inpBildetekst = document.getElementById("inpBildetekst");
+      let inpFile = document.getElementById("inpFile");
+      let alleBildene = document.getElementById("alleBildene");
+
+      function lagreData(snapshot){
+        let bildeURL = snapshot.downloadURL;//URL hvor vi finner bildet
+        let bildetekst = inpBildetekst.value;//Beskrivelse av bildet
+        let bildeinfo = {
+          "url": bildeURL,
+          "tekst": bildetekst
+        };
+        bildedata.push(bildeinfo);
+      };
+      function lastOppBilde(evt){
+        evt.preventDefault();
+        let fil = inpFil.files[0];//Filen som er valgt
+        let lagrinsplass = storage.ref("bilder/" + new Date());//Får et unikt filnavn
+        lagrinsplass.put(fil).then(lagreData);//Passer på å ikke lagre data før bildet er lagret
+      }
+      function visAlleBildene(snapshot){
+        let bildedata = snapshot.val();
+        alleBildene.innerHTML = `<article>
+          <img src="${bildedata.url}">
+          <p>${bildedata.tekst}</p>
+          </article>
+          <hr>` + alleBildene.innerHTML;
+      }
+      //Legger til kode som sørger for å starte funksjonen npr brukeren velger bilde
+      skjema.addEventListener("submit",lastOppBilde);
+      bildedata.on("child_added",visAlleBildene);//Viser bildene som legges til
+    </script>
+  </body>
+</html>

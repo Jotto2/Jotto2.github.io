@@ -60,6 +60,18 @@
   .homeIcon:hover .iconHover{
     opacity: 0.75;
   }
+
+  /* Quotes øverst på siden */
+  #headerQuotes{
+    float: right;
+    padding-top: 19px;
+    padding-right: 20px;
+    font-style: italic;
+    color: #7ce97c;
+    transition: 1s;
+    opacity: 0.75;
+    font-size: 16px;
+  }
   /* Login øverst på siden */
   #headerLogIn{
     float: right;
@@ -132,7 +144,7 @@
     margin-bottom: 15px;
   }
   #postMakerFile{
-    display: none;
+    display: inline;
   }
   #fileLabel{
     background: white;
@@ -207,8 +219,9 @@
   .postND{
   }
   .postName{
-    font-size: 15px;
+    font-size: 18px;
     color: #7ce97c;
+
   }
   .postDate{
     color: #a7a7a7;
@@ -352,7 +365,7 @@
     margin: 10px 0 0 10px;
   }
   .postDate{
-    margin: 10px 0 0 10px;
+    margin: 5px 0 0 10px;
   }
   .like{
     width: 40px;
@@ -394,21 +407,8 @@
     margin: 6.56px;
   }
   /* Login øverst på siden */
-  #headerLogIn{
-    padding: 12.5px;
-  }
-  #registerButton{
-    margin-top: 30px;
-    margin-left: 40px;
-  }
-  .logInButton{
-    padding: 5px;
-    font-size: 11px;
-  }
-  .logInInput{
-    padding: 5px;
-    margin-right: 5px;
-    font-size: 11px;
+  #headerQuotes{
+    display: none;
   }
 
   main{
@@ -469,7 +469,7 @@
     grid-row: span 1;
   }
   .postInfo{
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     height: 75px;
   }
   .postND{

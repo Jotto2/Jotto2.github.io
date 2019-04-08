@@ -30,11 +30,12 @@
         </div>
       </a>
 
-      <section id="headerLogIn">
+      <section id="headerQuotes"></section>
+      <!--<section id="headerLogIn">
         <input class="logInInput" type="text" placeholder="Username">
         <input class="logInInput" type="password" placeholder="Password">
         <button class="logInButton" type="button">Log in</button>
-      </section>
+      </section>-->
     </header>
     <main>
       <section id="mainLeft">
@@ -78,7 +79,7 @@
             <input id="postSubmit" type="submit"></input>
           </form>-->
           <form id="skjemaa">
-              <input type="text" id="inpMelding" placeholder="What's on your mind?" autocomplete="off">
+              <input id="inpMelding" type="text" placeholder="What's on your mind?" autocomplete="off">
               <input id="postMakerFile" type="file" accept="image/*">
               <label id="fileLabel" for="postMakerFile">Choose an image</label>
               <input type="submit" id="postSubmit" value="Plant">
@@ -87,8 +88,8 @@
         </section>
         <section id="sortMobile">
           Sort posts by
-          <button class="sortButton" type="button">Newest</button>
-          <button class="sortButton" type="button">Oldest</button>
+          <button class="sortButton" type="button" onClick="newest">Newest</button>
+          <button class="sortButton" type="button" onClick="oldest">Oldest</button>
           <button class="sortButton" type="button">Pictures</button>
         </section>
         <section id="allPosts">
@@ -106,28 +107,13 @@
             </section>
             <p class="postText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </section>
-          <section class="post">
-            <section class="postInfo">
-              <a href="#">
-                <img class="postProfilePicture" src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
-              </a>
-              <div class="postND">
-                <a href="#">
-                  <h1 class="postName">anonymous32</h1>
-                </a>
-                <p class="postDate">19.03.2019</p>
-              </div>
-            </section>
-            <p class="postText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <img class="like "src="https://cdn.worldvectorlogo.com/logos/facebook-like.svg">
-          </section>
         </section>
         </section>
       <section id="mainRight">
         <p id="sortTextRight">Sort posts by</p>
         <section id="sortButtons">
-          <button class="sortButton" type="button">Newest</button>
-          <button class="sortButton" type="button">Oldest</button>
+          <button class="sortButton" type="button" onClick="newest()">Newest</button>
+          <button class="sortButton" type="button" onClick="oldest()">Oldest</button>
           <button class="sortButton" type="button">Pictures</button>
         </section>
       </section>

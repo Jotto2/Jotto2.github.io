@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Plantr | Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
+  </head>
+
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDL7XcYRSYYMNbgrsE_1hk8ciLSwM6I844",
+        authDomain: "prosjekt2-database.firebaseapp.com",
+        databaseURL: "https://prosjekt2-database.firebaseio.com",
+        projectId: "prosjekt2-database",
+        storageBucket: "prosjekt2-database.appspot.com",
+        messagingSenderId: "804866777162"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <header>
+      <a href="index.html">
+        <img id="mainLogo" src="pics/plantrLogo.png">
+        <div class="homeIcon">
+          <img src="pics/logoHover.png" class="iconHover">
+          <img src="pics/home1.png" id="home">
+        </div>
+      </a>
+
+      <section id="headerQuotes">
+        "You gotta water your plants. Nobody can water them for you."
+      </section>
+      <!--<section id="headerLogIn">
+        <input class="logInInput" type="text" placeholder="Username">
+        <input class="logInInput" type="password" placeholder="Password">
+        <button class="logInButton" type="button">Log in</button>
+      </section>-->
+    </header>
+    <main>
+      <section id="mainLeft">
+        <section id="leftLogIn">
+          <script>
+          var d = new Date();
+          var hour = d.getHours();
+          var greet = "<p id='greet'>";
+          if(hour<6){
+            greet += "Good night";
+          }else if(hour<12){
+            greet += "Good morning";
+          }else if(hour<17){
+            greet += "Good afternoon";
+          }else if(hour<20){
+            greet += "Good evening";
+          }else{
+            greet += "Good night";
+          }
+          greet += " :)</p>";
+          document.write(greet);
+          </script>
+          <p id="signedInText">You are not currently signed in.</p>
+          <a href="register.html"><button class="logInButton" type="button" id="registerButton">Sign in using Google</button></a>
+          <br><script>//document.write(window.outerWidth)</script>
+        </section>
+      </section>
+      <section id="mainCenter"
+        <section id="userPosts">
+        </section>
+        </section>
+      <section id="mainRight">
+      </section>
+    </main>
+
+    <script src="user.js"></script>
+  </body>
+</html>
