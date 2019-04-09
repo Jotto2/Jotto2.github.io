@@ -29,13 +29,7 @@
           <img src="pics/home1.png" id="home">
         </div>
       </a>
-
       <section id="headerQuotes"></section>
-      <!--<section id="headerLogIn">
-        <input class="logInInput" type="text" placeholder="Username">
-        <input class="logInInput" type="password" placeholder="Password">
-        <button class="logInButton" type="button">Log in</button>
-      </section>-->
     </header>
     <main>
       <section id="mainLeft">
@@ -59,7 +53,7 @@
           document.write(greet);
           </script>
           <p id="signedInText">You are not currently signed in.</p>
-          <a href="register.html"><button class="logInButton" type="button" id="registerButton">Sign in using Google</button></a>
+          <a href="register.html"><button class="logInButton" type="button" id="registerButton"></button></a>
           <br><script>//document.write(window.outerWidth)</script>
         </section>
       </section>
@@ -81,15 +75,15 @@
           <form id="skjemaa">
               <input id="inpMelding" type="text" placeholder="What's on your mind?" autocomplete="off">
               <input id="postMakerFile" type="file" accept="image/*">
-              <label id="fileLabel" for="postMakerFile">Choose an image</label>
+                <label id="fileLabel" for="postMakerFile">Choose an image</label>
               <input type="submit" id="postSubmit" value="Plant">
           </form>
 
         </section>
         <section id="sortMobile">
           Sort posts by
-          <button class="sortButton" type="button" onClick="newest">Newest</button>
-          <button class="sortButton" type="button" onClick="oldest">Oldest</button>
+          <button class="sortButton" type="button" onClick="newest()">Newest</button>
+          <button class="sortButton" type="button" onClick="oldest()">Oldest</button>
           <button class="sortButton" type="button">Pictures</button>
         </section>
         <section id="allPosts">
@@ -100,12 +94,14 @@
               </a>
               <div class="postND">
                 <a href="#">
-                  <h1 class="postName">anonymous32</h1>
+                  <h1 class="postName" display="inline">Team Plantr</h1>
+                  <div id="lala"><img src="https://png.pngtree.com/svg/20170116/4c9816379c.png" width="10px"></div>
                 </a>
                 <p class="postDate">19.03.2019</p>
               </div>
             </section>
-            <p class="postText">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="postText">Welcome to Plantr:)</p>
+            <p class="postText">Bla bla bal</p>
           </section>
         </section>
         </section>
@@ -116,6 +112,7 @@
           <button class="sortButton" type="button" onClick="oldest()">Oldest</button>
           <button class="sortButton" type="button">Pictures</button>
         </section>
+        <section id="allPlants"></section>
       </section>
     </main>
 

@@ -7,7 +7,7 @@
   </head>
   <body>
     <form id="skjema">
-      <input type="file" id="inpFil" class="button" required>
+      <input type="file" id="inpFile" class="button" required>
       <input type="text" id="inpBildetekst" required placeholder="Hva har du tatt bilde av?">
       <button class="button" type="submit">OK</button>
     </form>
@@ -39,21 +39,20 @@
         let bildeURL = snapshot.downloadURL;//URL hvor vi finner bildet
         let bildetekst = inpBildetekst.value;//Beskrivelse av bildet
         let bildeinfo = {
-          "url": bildeURL,
-          "tekst": bildetekst
+          "url":bildeURL,
+          "tekst":bildetekst
         };
         bildedata.push(bildeinfo);
       };
       function lastOppBilde(evt){
         evt.preventDefault();
-        let fil = inpFil.files[0];//Filen som er valgt
+        let fil = inpFile.files[0];//Filen som er valgt
         let lagrinsplass = storage.ref("bilder/" + new Date());//Får et unikt filnavn
         lagrinsplass.put(fil).then(lagreData);//Passer på å ikke lagre data før bildet er lagret
       }
       function visAlleBildene(snapshot){
         let bildedata = snapshot.val();
         alleBildene.innerHTML = `<article>
-          <img src="${bildedata.url}">
           <p>${bildedata.tekst}</p>
           </article>
           <hr>` + alleBildene.innerHTML;

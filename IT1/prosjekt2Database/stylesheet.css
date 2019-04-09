@@ -16,7 +16,7 @@
   }
   body{
    margin: 0;
-   background: #e6ecf0;
+   background: #f0f0f0;
   }
 
   /* Start Header */
@@ -106,6 +106,7 @@
   #mainCenter{
     background-image: linear-gradient(to top, #f1f6fa, #ace6ac);
     background-attachment: fixed;
+    padding-bottom: 20px;
   }
   #mainRight{
     background: #e6ecf0;
@@ -126,6 +127,9 @@
     margin: 0;
     margin-bottom: 10px;
   }
+  #logInName{
+    color: #7ce97c;
+  }
 
   /* Der man lager post */
   #postMaker{
@@ -144,7 +148,7 @@
     margin-bottom: 15px;
   }
   #postMakerFile{
-    display: inline;
+    display: none;
   }
   #fileLabel{
     background: white;
@@ -202,6 +206,9 @@
   }
 
   /* Post Start */
+  #me{
+    background: #effaff;
+  }
   .post{
     background: white;
     margin: auto;
@@ -211,7 +218,7 @@
   }
   .postProfilePicture{
     overflow: hidden;
-    border-radius: 5px;
+    border-radius: 50px;
   }
   .postInfo{
     display: grid;
@@ -221,12 +228,13 @@
   .postName{
     font-size: 18px;
     color: #7ce97c;
-
   }
   .postDate{
     color: #a7a7a7;
   }
-  .like{
+  #lala{
+    display: inline;
+    width: 10px;
   }
   /* Post Slutt */
 
@@ -245,6 +253,35 @@
   .sortButton:hover{
     background: #e9e9e9;
   }
+
+  .plant{
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 20px;
+  }
+  .plantName{
+    font-size: 20px;
+    margin: 10px;
+    text-align: center;
+    color: #7ce97c;
+  }
+  .plantPic{
+    width: 80%;
+    border-radius: 10px;
+    margin-left: 10%;
+    margin-bottom: 10px;
+  }
+  .plantLink{
+    background: #7ce97c;
+    border-radius: 10px;
+    color: white;
+    padding: 5px;
+    margin: auto;
+  }
+  .plantLink:hover{
+    background: #62b462;
+  }
   /* Slutt Main */
 
   /* Register start */
@@ -252,9 +289,13 @@
     grid-column: span 6;
     background: white;
     padding: 100px 10%;
-    height: 100%;
   }
-
+  #registerTitle{
+    font-size: 45px;
+    margin-top: 0;
+    color: #7ce97c;
+    text-align: center;
+  }
   .registerInput{
     display: block;
     margin: 10px;
@@ -290,7 +331,7 @@
   }
   #registerButton{
     margin-bottom: 10px;
-    margin-left: 50px;
+    margin-left: 30px;
   }
   .logInButton{
     padding: 5px;
@@ -379,6 +420,10 @@
   #sortButtons{
     display: block
     ;
+  }
+
+  #registerCenter{
+    height: 93vh;
   }
 }
 
@@ -531,7 +576,7 @@
   }
   #registerButton{
     margin-left: 10px;
-    margin-top: 0;
+    margin-top: 10px;
     font-size: 14px;
   }
   .logInButton{

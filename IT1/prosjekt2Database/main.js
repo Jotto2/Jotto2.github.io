@@ -5,11 +5,27 @@ let inputText = document.querySelector("#inpMelding");
 let signedIn = document.querySelector("#signedInText");
 let headerQuotes = document.querySelector("#headerQuotes");
 let inpFile = document.getElementById("postMakerFile");
+let registerButton = document.getElementById("registerButton");
+let secAllPlants = document.getElementById("allPlants");
 
 // Firebase referanser //
 let db = firebase.database();
 let posts = db.ref("posts");
-let numberr = db.ref("numberbox").number;
+let plantsInfo = db.ref("plantsInfo");
+
+
+function visPlants(snapshot){
+  let key = snapshot.key;
+  let plant = snapshot.val();
+  secAllPlants.innerHTML += `
+  <section class="plant">
+  <p class="plantName">${plant.name}</p>
+  <img class="plantPic"src="${plant.picture}">
+  <a class="plantLink" href="">Read more</a>
+  </section>`;
+}
+
+plantsInfo.orderByKey().on("child_added",visPlants);
 
 // Definerer user globalt, siden vi skal hente verdier fra den innloggede brukeren
 let user;
@@ -55,19 +71,17 @@ function lagreMelding(evt) {
 // Funksjonene som viser meldingene
 function visMeldingNew(snap) {
     let melding = snap.val();
-    let klasse = "others";
+    let id = "others";
     let key = snap.key;
     // Sjekker om denne meldingen kommer fra meg selv
     if(user.uid === melding.uid) {
-        klasse = "me";
-    }
-
-    let bilde = "anonym.png";
+        id = "me";}
+    let bilde = "http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
     if(melding.photoURL) {
         bilde = melding.photoURL;
     }
     secAllPosts.innerHTML = `
-        <section class="post">
+        <section class="post" id="${id}">
           <section class="postInfo">
             <a href="user.html?id=${melding.displayName}">
               <img class="postProfilePicture" src="${bilde}">
@@ -83,14 +97,13 @@ function visMeldingNew(snap) {
         </section>
     ` + secAllPosts.innerHTML;
 }
-
 function visMeldingOld(snap) {
     let melding = snap.val();
-    let klasse = "others";
+    let id = "others";
     let key = snap.key;
     // Sjekker om denne meldingen kommer fra meg selv
     if(user.uid === melding.uid) {
-        klasse = "me";
+        id = "me";
     }
 
     let bilde = "anonym.png";
@@ -98,7 +111,7 @@ function visMeldingOld(snap) {
         bilde = melding.photoURL;
     }
     secAllPosts.innerHTML = secAllPosts.innerHTML + `
-        <section class="post">
+        <section class="post" id="${id}">
           <section class="postInfo">
             <a href="user.html?id=${melding.displayName}">
               <img class="postProfilePicture" src="${bilde}">
@@ -123,20 +136,21 @@ firebase.auth().onAuthStateChanged( newuser => {
         postMakerForm.addEventListener("submit", lagreMelding);
         posts.on("child_added", visMeldingNew);
 
-        signedIn.innerHTML = `You are signed in as <a href="user.html?id=${user.displayName}">${user.displayName}</a>`;
+        signedIn.innerHTML = `You are signed in as <a href="user.html?id=${user.displayName}" id="logInName">${user.displayName}</a>`;
+        registerButton.innerHTML = `Sign in with another account`;
     } else {
         signedIn.innerHTML = `Welcome to Plantr.<br>
         Start by signing in.`;
+        registerButton.innerHTML = `Sign in with Google`;
     }
 });
 
 // Funksjoner som kjøres når sort-knappene trykkes
-function newest(){
+function newest() {
   secAllPosts.innerHTML = ``;
   posts.orderByChild("timestamp").on("child_added", visMeldingNew);
 }
-
-function oldest(){
+function oldest() {
   secAllPosts.innerHTML = ``;
   posts.orderByChild("timestamp").on("child_added", visMeldingOld);
 }
