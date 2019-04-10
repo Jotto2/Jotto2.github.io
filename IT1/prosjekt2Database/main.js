@@ -7,13 +7,14 @@ let headerQuotes = document.querySelector("#headerQuotes");
 let inpFile = document.getElementById("postMakerFile");
 let registerButton = document.getElementById("registerButton");
 let secAllPlants = document.getElementById("allPlants");
+let secTime = document.getElementById("time");
 
 // Firebase referanser //
 let db = firebase.database();
 let posts = db.ref("posts");
 let plantsInfo = db.ref("plantsInfo");
 
-
+/*
 function visPlants(snapshot){
   let key = snapshot.key;
   let plant = snapshot.val();
@@ -26,7 +27,7 @@ function visPlants(snapshot){
 }
 
 plantsInfo.orderByKey().on("child_added",visPlants);
-
+*/
 // Definerer user globalt, siden vi skal hente verdier fra den innloggede brukeren
 let user;
 
@@ -43,6 +44,17 @@ function nextQuote(){
   if(i == allQuotes.length){i = 0;};
 }
 
+setInterval(newTime, 1000);
+function newTime(){
+  var d = new Date();
+  var hour = d.getHours();
+  var minute = d.getMinutes();
+  var second = d.getSeconds();
+  if (second < 10){second = "0" + second;}
+  if (minute < 10){minute = "0" + minute;}
+  if (hour < 10){hour = "0" + hour;}
+  secTime.innerHTML = `- ${hour}:${minute}:${second}`;
+}
 // Funksjon som lagrer meldingene
 function lagreMelding(evt) {
     let d = new Date();
@@ -57,6 +69,7 @@ function lagreMelding(evt) {
         uid: user.uid,
         displayName: user.displayName,
         photoURL: user.photoURL,
+        email: user.email,
         year: year,
         month: months[month],
         day: day,

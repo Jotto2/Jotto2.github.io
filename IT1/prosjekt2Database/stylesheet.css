@@ -5,302 +5,338 @@
     outline: 0;
     transition: .2s;
   }
-  *::selection{
-    background-color: #b5f7d6;;
-  }
-  body::-webkit-scrollbar{
-    display: none;
-  }
-  a{
-    text-decoration: none;
-  }
-  body{
-   margin: 0;
-   background: #f0f0f0;
-  }
+*::selection{
+  background-color: #b5f7d6;;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+a{
+  text-decoration: none;
+}
+body{
+ margin: 0;
+ background: #f0f0f0;
+}
 
-  /* Start Header */
-  header{
-    background: white;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    border-bottom: 1.25px solid #b3b3b3;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    right: 0;
-  }
-  /* Logo */
-  #mainLogo{
-    display: inline;
-  }
-  /* Hjem-ikon */
-  .homeIcon{
-    display: inline;
-    position: absolute;
-  }
-  .homeIcon img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    opacity: 100;
-  }
-  .homeIcon #home{
-    z-index: 9999;
-    cursor: pointer;
-  }
-  .homeIcon .iconHover{
-    opacity: 0;
-    transition: opacity .125s linear;
-  }
-  .homeIcon:hover #home{
-    opacity: 100;
-  }
-  .homeIcon:hover .iconHover{
-    opacity: 0.75;
-  }
+/* Start Header */
+header{
+  background: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  border-bottom: 1.25px solid #b3b3b3;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  right: 0;
+}
 
-  /* Quotes øverst på siden */
-  #headerQuotes{
-    float: right;
-    padding-top: 19px;
-    padding-right: 20px;
-    font-style: italic;
-    color: #7ce97c;
-    transition: 1s;
-    opacity: 0.75;
-    font-size: 16px;
-  }
-  /* Login øverst på siden */
-  #headerLogIn{
-    float: right;
-  }
-  .logInButton{
-    border-radius: 10px;
-    color: white;
-    background: #7ce97c;
-    border: 1.5px solid #7ce97c;
-    transition: 0.1s;
-    cursor: pointer;
-  }
-  .logInButton:hover{
-    background: #62b462;
-    border: 1.5px solid #62b562;
-  }
-  .logInInput{
-    border-radius: 10px;
-    border: 1.5px solid #7ce97c;
-  }
-  /* Slutt Header */
+/* Logo */
+#mainLogo{
+  display: inline;
+}
 
-  /* Start Main*/
-  main{
-    display: grid;
-  }
-  #mainLeft{
-    background: #e6ecf0;
-    background-image: linear-gradient(to top, #f1f6fa, #ace6ac);
-    background-attachment: fixed;
-  }
-  #mainCenter{
-    background-image: linear-gradient(to top, #f1f6fa, #ace6ac);
-    background-attachment: fixed;
-    padding-bottom: 20px;
-  }
-  #mainRight{
-    background: #e6ecf0;
-    background-image: linear-gradient(to top, #f1f6fa, #ace6ac);
-    background-attachment: fixed;
-  }
+/* Hjem-ikon */
+.homeIcon{
+  display: inline;
+  position: absolute;
+}
+.homeIcon img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  opacity: 100;
+}
+.homeIcon #home{
+  z-index: 9999;
+  cursor: pointer;
+}
+.homeIcon .iconHover{
+  opacity: 0;
+  transition: opacity .125s linear;
+}
+.homeIcon:hover #home{
+  opacity: 100;
+}
+.homeIcon:hover .iconHover{
+  opacity: 0.75;
+}
 
+/* Quotes øverst på siden */
+#headerQuotes{
+  float: right;
+  padding-top: 19px;
+  padding-right: 5px;
+  font-style: italic;
+  color: #7ce97c;
+  transition: 1s;
+  opacity: 0.75;
+  font-size: 16px;
+}
+#time{
+  display: inline;
+  float: right;
+  padding-top: 19px;
+  padding-right: 20px;
+  color: #7ce97c;
+  opacity: 0.75;
+}
+
+/* Login øverst på siden */
+#headerLogIn{
+  float: right;
+}
+.logInButton{
+  border-radius: 10px;
+  color: white;
+  background: #7ce97c;
+  border: 1.5px solid #7ce97c;
+  transition: 0.1s;
+  cursor: pointer;
+}
+.logInButton:hover{
+  background: #62b462;
+  border: 1.5px solid #62b562;
+}
+.logInInput{
+  border-radius: 10px;
+  border: 1.5px solid #7ce97c;
+}
+/* Slutt Header */
+
+/* Start Main*/
+main{
+  display: grid;
+}
+#mainLeft{
+  background: #e6ecf0;
+  background-image: linear-gradient(to top, #f1f6fa, #ace6ac);
+  background-attachment: fixed;
+}
+#mainCenter{
+  background-image: linear-gradient(to top, #f1f6fa, #ace6ac);
+  background-attachment: fixed;
+  padding-bottom: 20px;
+}
+#mainRight{
+  background: #e6ecf0;
+  background-image: linear-gradient(to top, #f1f6fa, #ace6ac);
+  background-attachment: fixed;
+}
   #leftLogIn{
-    background: white;
-    border-radius: 10px;
-    margin-top: 20px;
-    margin-left: 15px;
-    padding: 10px;
-  }
-  #greet{
-    color: #7ce97c;
-    font-size: 20px;
-    margin: 0;
-    margin-bottom: 10px;
-  }
-  #logInName{
-    color: #7ce97c;
-  }
+  background: white;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: 15px;
+  padding: 10px;
+}
+#greet{
+  color: #7ce97c;
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+#logInName{
+  color: #7ce97c;
+}
 
-  /* Der man lager post */
-  #postMaker{
-    background: white;
-    margin: auto;
-    border-radius: 10px;
-    color: black;
-  }
-  #postMakerTitle{
-    color: #7ce97c;
-    font-size: 30px;
-  }
-  #inpMelding{
-    border: 1px solid #e9e9e9;
-    border-radius: 10px;
-    margin-bottom: 15px;
-  }
-  #postMakerFile{
-    display: none;
-  }
-  #fileLabel{
-    background: white;
-    padding: 5px;
-    color: #7ce97c;
-    border: 1.5px solid #7ce97c;
-    border-radius: 10px;
-    margin-top: 50px;
-    cursor: pointer;
-  }
-  #fileLabel:hover{
-    background: #7ce97c;
-    color: white;
-  }
+/* Der man lager post */
+#postMaker{
+  background: white;
+  margin: auto;
+  border-radius: 10px;
+  color: black;
+}
+#postMakerTitle{
+  color: #7ce97c;
+  font-size: 30px;
+}
+#inpMelding{
+  border: 1px solid #e9e9e9;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+#postMakerFile{
+  display: none;
+}
+#fileLabel{
+  background: white;
+  padding: 5px;
+  color: #7ce97c;
+  border: 1.5px solid #7ce97c;
+  border-radius: 10px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+#fileLabel:hover{
+  background: #7ce97c;
+  color: white;
+}
 
-  /* Forsøk på ikon i bilde input */
-  /*#upoloadImageBox{
-    display: inline;
-  }
-  #uploadImageBox img{
-    display: inline;
-    position: absolute;
-    width: 20px;
-    overflow: hidden;
-    opacity: 100;
-  }
-  #uploadImageBox #uploadG{
-    z-index: 9999;
-    cursor: pointer;
-  }
-  #uploadImageBox #uploadW{
-    opacity: 0;
-    transition: opacity .125s linear;
-  }
-  #uploadImageBox:hover #uploadG{
-    opacity: 0;
-  }
-  #uploadImageBox #uploadW{
-    opacity: 100;
-  }*/
+/* Forsøk på ikon i bilde input */
+/*#upoloadImageBox{
+  display: inline;
+}
+#uploadImageBox img{
+  display: inline;
+  position: absolute;
+  width: 20px;
+  overflow: hidden;
+  opacity: 100;
+}
+#uploadImageBox #uploadG{
+  z-index: 9999;
+  cursor: pointer;
+}
+#uploadImageBox #uploadW{
+  opacity: 0;
+  transition: opacity .125s linear;
+}
+#uploadImageBox:hover #uploadG{
+  opacity: 0;
+}
+#uploadImageBox #uploadW{
+  opacity: 100;
+}*/
+#postSubmit{
+  background: white;
+  float: right;
+  border-radius: 10px;
+  background: #7ce97c;
+  border: 1.5px solid #7ce97c;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+#postSubmit:hover{
+  background: #62b462;
+  border: 1.5px solid #62b562;
+}
 
-  #postSubmit{
-    background: white;
-    float: right;
-    border-radius: 10px;
-    background: #7ce97c;
-    border: 1.5px solid #7ce97c;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  #postSubmit:hover{
-    background: #62b462;
-    border: 1.5px solid #62b562;
-  }
+/* Post Start */
+#me{
+  background: #effaff;
+}
+.post{
+  background: white;
+  margin: auto;
+  border-radius: 10px;
+  border-bottom: 1.5px solid #e9e9e9;
+  border-right: 1.5px solid #e9e9e9;
+}
+.postProfilePicture{
+  overflow: hidden;
+  border-radius: 50px;
+  border: 1.5px solid #e9e9e9;
+}
+.postInfo{
+  display: grid;
+}
+.postND{
+}
+.postName{
+  font-size: 18px;
+  color: #7ce97c;
+}
+.postDate{
+  color: #a7a7a7;
+}
+#lala{
+  float: right;
+  margin-right: 45px;
+  width: 10px;
+}
 
-  /* Post Start */
-  #me{
-    background: #effaff;
-  }
-  .post{
-    background: white;
-    margin: auto;
-    border-radius: 10px;
-    border-bottom: 1.5px solid #e9e9e9;
-    border-right: 1.5px solid #e9e9e9;
-  }
-  .postProfilePicture{
-    overflow: hidden;
-    border-radius: 50px;
-  }
-  .postInfo{
-    display: grid;
-  }
-  .postND{
-  }
-  .postName{
-    font-size: 18px;
-    color: #7ce97c;
-  }
-  .postDate{
-    color: #a7a7a7;
-  }
-  #lala{
-    display: inline;
-    width: 10px;
-  }
-  /* Post Slutt */
+/* Post Slutt */
+#sortTextRight{
+  display: block;
+}
+#sortButtons{
+  margin-top: 5px;
+}
+.sortButton{
+  border: 0;
+  background: #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.sortButton:hover{
+  background: #e9e9e9;
+}
+.plant{
+  background: white;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 20px;
+}
+.plantName{
+  font-size: 20px;
+  margin: 10px;
+  text-align: center;
+  color: #7ce97c;
+}
+.plantPic{
+  width: 80%;
+  border-radius: 10px;
+  margin-left: 10%;
+  margin-bottom: 10px;
+}
+.plantLink{
+  background: #7ce97c;
+  border-radius: 10px;
+  color: white;
+  padding: 5px;
+  margin: auto;
+}
+.plantLink:hover{
+  background: #62b462;
+}
+/* Slutt Main */
 
-  #sortTextRight{
-    display: block;
-  }
-  #sortButtons{
-    margin-top: 5px;
-  }
-  .sortButton{
-    border: 0;
-    background: #ffffff;
-    border-radius: 2px;
-    cursor: pointer;
-  }
-  .sortButton:hover{
-    background: #e9e9e9;
-  }
-
-  .plant{
-    background: white;
-    border-radius: 10px;
-    padding: 5px;
-    margin-top: 20px;
-  }
-  .plantName{
-    font-size: 20px;
-    margin: 10px;
-    text-align: center;
-    color: #7ce97c;
-  }
-  .plantPic{
-    width: 80%;
-    border-radius: 10px;
-    margin-left: 10%;
-    margin-bottom: 10px;
-  }
-  .plantLink{
-    background: #7ce97c;
-    border-radius: 10px;
-    color: white;
-    padding: 5px;
-    margin: auto;
-  }
-  .plantLink:hover{
-    background: #62b462;
-  }
-  /* Slutt Main */
-
-  /* Register start */
-  #registerCenter{
-    grid-column: span 6;
-    background: white;
-    padding: 100px 10%;
-  }
-  #registerTitle{
-    font-size: 45px;
-    margin-top: 0;
-    color: #7ce97c;
-    text-align: center;
-  }
-  .registerInput{
-    display: block;
-    margin: 10px;
-  }
-
+/* Register start */
+#registerCenter{
+  grid-column: span 6;
+  background: white;
+  padding: 100px 10%;
+}
+#registerTitle{
+  font-size: 45px;
+  margin-top: 0;
+  color: #7ce97c;
+  text-align: center;
+}
+.registerInput{
+  display: block;
+  margin: 10px;
+}
+  /* User start */
+#userProfile{
+  background: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 95%;
+  padding: 20px;
+  margin: auto;
+  height: 190px;
+}
+#userProfilePicture{
+  width: 150px;
+  height: 150px;
+  float: left;
+  border-radius: 5px;
+  box-shadow: 2px 2px #e9e9e9;
+}
+#profileName{
+  font-size: 30px;
+  margin: 20px 0 0 180px;
+  color: #7ce97c;
+}
+#profileMail{
+  margin-left: 180px;
+  margin-top: 10px;
+  color: #a7a7a7;
+}
 /* Størrelser for 1920px skjermer (PC)*/
 @media(max-width:1920px){
   header{
@@ -387,6 +423,7 @@
     width: 95%;
     margin-top: 20px;
     padding: 20px;
+    padding-bottom: 5px;
   }
   .postProfilePicture{
     width: 75px;
