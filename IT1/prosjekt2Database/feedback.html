@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="stylesheet.css">
-    <title>Plantr | </title>
+    <title>Plantr | Home</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
   </head>
 
@@ -30,39 +30,30 @@
         </div>
       </a>
       <section id="time"></section>
-
-      <section id="headerQuotes">
-        "You gotta water your plants. Nobody can water them for you."
-      </section>
-      <!--<section id="headerLogIn">
-        <input class="logInInput" type="text" placeholder="Username">
-        <input class="logInInput" type="password" placeholder="Password">
-        <button class="logInButton" type="button">Log in</button>
-      </section>-->
+      <section id="headerQuotes"></section>
     </header>
     <main>
       <section id="mainLeft">
         <section id="leftLogIn">
           <script src="/js/greet.js"></script>
           <p id="signedInText">You are not currently signed in.</p>
-          <a href="register.html"><button class="logInButton" type="button" id="registerButton">Sign in using Google</button></a>
+          <a href="register.html"><button class="logInButton" type="button" id="registerButton"></button></a>
           <br>
         </section>
       </section>
       <section id="mainCenter">
-        <section id="userProfile"></section>
-        <section id="userPosts"></section>
+        <section id="secFeedback">
+          <p></p>
+          <form action="index.html" method="post">
+            <input type="text" required>
+          </form>
+
+        </section>
       </section>
       <section id="mainRight">
-        <p id="sortTextRight">Sort posts by</p>
-        <section id="sortButtons">
-          <button class="sortButton" type="button" onClick="ProfileNew()">Newest</button>
-          <button class="sortButton" type="button" onClick="ProfileOld()">Oldest</button>
-          <button class="sortButton" type="button">Pictures</button>
-        </section>
-        <section id="allPlants"><p>Facts about Plants</p></section>
+        <section id="allPlants"></section>
       </section>
     </main>
-    <script src="/js/user.js"></script>
+    <script src="/js/feedback.js"></script>
   </body>
 </html>

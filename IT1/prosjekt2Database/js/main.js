@@ -1,4 +1,4 @@
-// HTML-elementer //
+// HTML referanser
 let secAllPosts = document.querySelector("#allPosts");
 let postMakerForm = document.querySelector("#skjemaa");
 let inputText = document.querySelector("#inpMelding");
@@ -9,16 +9,16 @@ let registerButton = document.getElementById("registerButton");
 let secAllPlants = document.getElementById("allPlants");
 let secTime = document.getElementById("time");
 
-// Firebase referanser //
+// Firebase referanser
 let db = firebase.database();
 let posts = db.ref("posts");
 let plantsInfo = db.ref("plantsInfo");
 
-/*
+
 function visPlants(snapshot){
   let key = snapshot.key;
   let plant = snapshot.val();
-  secAllPlants.innerHTML += `
+  secAllPlants.innerHTML = secAllPlants.innerHTML + `
   <section class="plant">
   <p class="plantName">${plant.name}</p>
   <img class="plantPic"src="${plant.picture}">
@@ -27,7 +27,7 @@ function visPlants(snapshot){
 }
 
 plantsInfo.orderByKey().on("child_added",visPlants);
-*/
+
 // Definerer user globalt, siden vi skal hente verdier fra den innloggede brukeren
 let user;
 
@@ -44,6 +44,7 @@ function nextQuote(){
   if(i == allQuotes.length){i = 0;};
 }
 
+// Funksjonen for klokken
 setInterval(newTime, 1000);
 function newTime(){
   var d = new Date();
@@ -55,6 +56,7 @@ function newTime(){
   if (hour < 10){hour = "0" + hour;}
   secTime.innerHTML = `- ${hour}:${minute}:${second}`;
 }
+
 // Funksjon som lagrer meldingene
 function lagreMelding(evt) {
     let d = new Date();
@@ -82,61 +84,61 @@ function lagreMelding(evt) {
 }
 
 // Funksjonene som viser meldingene
-function visMeldingNew(snap) {
-    let melding = snap.val();
+function showMessageNew(snap) {
+    let post = snap.val();
     let id = "others";
     let key = snap.key;
     // Sjekker om denne meldingen kommer fra meg selv
-    if(user.uid === melding.uid) {
+    if(user.uid === post.uid) {
         id = "me";}
     let bilde = "http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png";
-    if(melding.photoURL) {
-        bilde = melding.photoURL;
+    if(post.photoURL) {
+        bilde = post.photoURL;
     }
     secAllPosts.innerHTML = `
         <section class="post" id="${id}">
           <section class="postInfo">
-            <a href="user.html?id=${melding.displayName}">
-              <img class="postProfilePicture" src="${bilde}">
+            <a href="user.html?id=${post.displayName}">
+              <img class="postProfilePicture" src="${bilde}" title="${post.displayName}">
             </a>
             <div class="postND">
-              <a href="user.html?id=${melding.displayName}">
-                <h1 class="postName">${melding.displayName}</h1>
+              <a href="user.html?id=${post.displayName}">
+                <h1 class="postName">${post.displayName}</h1>
               </a>
-              <p class="postDate">${melding.day}. ${melding.month} - ${melding.hour}:${melding.minute}</p>
+              <p class="postDate">${post.day}. ${post.month} - ${post.hour}:${post.minute}</p>
             </div>
           </section>
-          <p class="postText">${melding.text}
+          <p class="postText">${post.text}
         </section>
     ` + secAllPosts.innerHTML;
 }
-function visMeldingOld(snap) {
-    let melding = snap.val();
+function showMessageOld(snap) {
+    let post = snap.val();
     let id = "others";
     let key = snap.key;
     // Sjekker om denne meldingen kommer fra meg selv
-    if(user.uid === melding.uid) {
+    if(user.uid === post.uid) {
         id = "me";
     }
 
     let bilde = "anonym.png";
-    if(melding.photoURL) {
-        bilde = melding.photoURL;
+    if(post.photoURL) {
+        bilde = post.photoURL;
     }
     secAllPosts.innerHTML = secAllPosts.innerHTML + `
         <section class="post" id="${id}">
           <section class="postInfo">
-            <a href="user.html?id=${melding.displayName}">
-              <img class="postProfilePicture" src="${bilde}">
+            <a href="user.html?id=${post.displayName}">
+              <img class="postProfilePicture" src="${bilde}" title="${post.displayName}">
             </a>
             <div class="postND">
-              <a href="user.html?id=${melding.displayName}">
-                <h1 class="postName">${melding.displayName}</h1>
+              <a href="user.html?id=${post.displayName}">
+                <h1 class="postName">${post.displayName}</h1>
               </a>
-              <p class="postDate">${melding.day}. ${melding.month} - ${melding.hour}:${melding.minute}</p>
+              <p class="postDate">${post.day}. ${post.month} - ${post.hour}:${post.minute}</p>
             </div>
           </section>
-          <p class="postText">${melding.text}
+          <p class="postText">${post.text}
         </section>`;
 }
 
@@ -147,7 +149,7 @@ firebase.auth().onAuthStateChanged( newuser => {
         user = newuser;
         // Event Listeners
         postMakerForm.addEventListener("submit", lagreMelding);
-        posts.on("child_added", visMeldingNew);
+        posts.on("child_added", showMessageNew);
 
         signedIn.innerHTML = `You are signed in as <a href="user.html?id=${user.displayName}" id="logInName">${user.displayName}</a>`;
         registerButton.innerHTML = `Sign in with another account`;
@@ -161,9 +163,9 @@ firebase.auth().onAuthStateChanged( newuser => {
 // Funksjoner som kjøres når sort-knappene trykkes
 function newest() {
   secAllPosts.innerHTML = ``;
-  posts.orderByChild("timestamp").on("child_added", visMeldingNew);
+  posts.orderByChild("timestamp").on("child_added", showMessageNew);
 }
 function oldest() {
   secAllPosts.innerHTML = ``;
-  posts.orderByChild("timestamp").on("child_added", visMeldingOld);
+  posts.orderByChild("timestamp").on("child_added", showMessageOld);
 }

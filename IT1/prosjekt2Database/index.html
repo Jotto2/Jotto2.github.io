@@ -35,27 +35,10 @@
     <main>
       <section id="mainLeft">
         <section id="leftLogIn">
-          <script>
-          var d = new Date();
-          var hour = d.getHours();
-          var greet = "<p id='greet'>";
-          if(hour<6){
-            greet += "Good night";
-          }else if(hour<12){
-            greet += "Good morning";
-          }else if(hour<17){
-            greet += "Good afternoon";
-          }else if(hour<20){
-            greet += "Good evening";
-          }else{
-            greet += "Good night";
-          }
-          greet += " :)</p>";
-          document.write(greet);
-          </script>
+          <script src="/js/greet.js"></script>
           <p id="signedInText">You are not currently signed in.</p>
           <a href="register.html"><button class="logInButton" type="button" id="registerButton"></button></a>
-          <br><script>//document.write(window.outerWidth)</script>
+          <br>
         </section>
       </section>
       <section id="mainCenter">
@@ -74,7 +57,7 @@
             <input id="postSubmit" type="submit"></input>
           </form>-->
           <form id="skjemaa">
-              <input id="inpMelding" type="text" placeholder="What's on your mind?" autocomplete="off">
+              <input id="inpMelding" type="text" placeholder="What's on your mind?" autocomplete="off" required>
               <input id="postMakerFile" type="file" accept="image/*">
                 <label id="fileLabel" for="postMakerFile">Choose an image</label>
               <input type="submit" id="postSubmit" value="Plant">
@@ -90,21 +73,18 @@
         <section id="allPosts">
           <section class="post">
             <section class="postInfo">
-              <a href="#">
-                <img class="postProfilePicture" src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
-              </a>
+              <img class="postProfilePicture" src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" title="Team Plantr">
               <div class="postND">
-                <a href="#">
-                  <h1 class="postName" display="inline">
-                    <div id="lala">
-                      <img src="https://png.pngtree.com/svg/20170116/4c9816379c.png" width="10px">
-                    </div>Team Plantr</h1>
-                </a>
+                <h1 class="postName" display="inline">
+                  <div id="lala">
+                    <img src="https://png.pngtree.com/svg/20170116/4c9816379c.png" width="10px" title="Verified">
+                  </div>Team Plantr</h1>
                 <p class="postDate">19.03.2019</p>
               </div>
             </section>
-            <p class="postText">Welcome to Plantr:)</p>
-            <p class="postText">Bla bla bal</p>
+            <p class="postText">Welcome to <span class="green">Plantr</span> :)</p>
+            <p class="postText">Planr is a website where you can share anything. After you have signed in with Google you can post text and/or pictures. Sort all the posts by using the top right buttons. You can also click on a profilename and see all the persons' posts.</p>
+            <p class="postText">Happy <span class="green">Planting</span> :)</p>
           </section>
         </section>
         </section>
@@ -118,9 +98,6 @@
         <section id="allPlants"></section>
       </section>
     </main>
-
-
-
-            <script src="main.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

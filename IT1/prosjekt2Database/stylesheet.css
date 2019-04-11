@@ -242,6 +242,14 @@ main{
 .postDate{
   color: #a7a7a7;
 }
+.postText{
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+.green{
+  color: #7ce97c;
+  font-weight: bold;
+}
 #lala{
   float: right;
   margin-right: 45px;
@@ -264,9 +272,11 @@ main{
 .sortButton:hover{
   background: #e9e9e9;
 }
-.plant{
+#allPlants{
   background: white;
   border-radius: 10px;
+}
+.plant{
   padding: 5px;
   margin-top: 20px;
 }
@@ -277,10 +287,9 @@ main{
   color: #7ce97c;
 }
 .plantPic{
-  width: 80%;
-  border-radius: 10px;
-  margin-left: 10%;
-  margin-bottom: 10px;
+  width: 200px;
+  margin-left: 25px;
+  margin-bottom: 20px;
 }
 .plantLink{
   background: #7ce97c;
@@ -288,6 +297,8 @@ main{
   color: white;
   padding: 5px;
   margin: auto;
+  width: 40%;
+  margin-left: 30%;
 }
 .plantLink:hover{
   background: #62b462;
@@ -336,6 +347,12 @@ main{
   margin-left: 180px;
   margin-top: 10px;
   color: #a7a7a7;
+}
+
+#secFeedback{
+  background: white;
+  width: 95%;
+  border-radius: 10px;
 }
 /* Størrelser for 1920px skjermer (PC)*/
 @media(max-width:1920px){
@@ -461,125 +478,6 @@ main{
 
   #registerCenter{
     height: 93vh;
-  }
-}
-
-/* Størrelser for 991px skjermer (Nettbrett) */
-@media(max-width:991px){
-  header{
-    height: 55px;
-  }
-  #mainLogo{
-    width: 110px;
-    margin-left: 10px;
-    margin-top: 2.5px;
-  }
-  .homeIcon{
-    display: inline;
-    margin-left: 25px;
-    margin-top: 7.5px;
-  }
-  .homeIcon img{
-    width: 35px;
-    height: 35px;
-  }
-  .homeIcon #home{
-    width: 21.875px;
-    height: 21.875px;
-    margin: 6.56px;
-  }
-  /* Login øverst på siden */
-  #headerQuotes{
-    display: none;
-  }
-
-  main{
-    margin-top: 50px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  }
-  #mainLeft{
-    grid-column: span 2;
-  }
-  #mainCenter{
-    grid-column: span 6;
-  }
-  #mainRight{
-    grid-column: span 2;
-    padding: 25px;
-  }
-
-  /* Der man lager post */
-  #postMaker{
-    width: 95%;
-    margin-top: 20px;
-    padding: 20px;
-    padding-bottom: 50px;
-  }
-  #postMakerTitle{
-    margin: 0;
-  }
-  #inpMelding{
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-  }
-  input[type=file]{
-    width: 20%;
-    padding: 10px;
-    margin-top: 10px;
-  }
-  #postSubmit{
-    width: 100px;
-    padding: 10px;
-    margin-top: 0;
-  }
-
-  #sortMobile{
-    display: block;
-    margin: 20px 0 0 30px;
-  }
-  /* Post Start */
-  .post{
-    width: 95%;
-    margin-top: 20px;
-    padding: 20px;
-  }
-  .postProfilePicture{
-    width: 75px;
-    height: 75px;
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-  .postInfo{
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    height: 75px;
-  }
-  .postND{
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-  .postName{
-    margin: 10px 0 0 10px;
-  }
-  .postDate{
-    margin: 10px 0 0 10px;
-  }
-  .like{
-    width: 40px;
-  }
-  /* Post Slutt */
-
-  #sortTextRight{
-    display: none;
-  }
-  #sortButtons{
-    display: none;
-  }
-  .sortButton{
-    padding: 5px;
-    margin-left: 4px;
-    display: inline;
-    margin: 0;
   }
 }
 
