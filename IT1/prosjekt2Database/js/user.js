@@ -4,7 +4,6 @@ let signedIn = document.querySelector("#signedInText");
 let registerButton = document.getElementById("registerButton");
 let userP = document.getElementById("userProfile");
 let title = document.querySelector("title");
-let secTime = document.getElementById("time");
 
 // Firebase referanser
 let db = firebase.database();
@@ -17,19 +16,6 @@ var url = new URL(url_string);
 var id = url.searchParams.get("id");
 
 let user;
-
-// Funksjonen for klokken
-setInterval(newTime, 1000);
-function newTime(){
-  var d = new Date();
-  var hour = d.getHours();
-  var minute = d.getMinutes();
-  var second = d.getSeconds();
-  if (second < 10){second = "0" + second;}
-  if (minute < 10){minute = "0" + minute;}
-  if (hour < 10){hour = "0" + hour;}
-  secTime.innerHTML = `- ${hour}:${minute}:${second}`;
-}
 
 // Funksjonene som viser meldingene
 function showProfilePostNew(snap) {
@@ -53,13 +39,14 @@ function showProfilePostNew(snap) {
             </div>
           </section>
           <p class="postText">${post.text}
+          <img class="postImg" src="${post.url}">
         </section>` + main.innerHTML;
     userP.innerHTML = `
     <img id="userProfilePicture" src="${picture}">
     <h1 id="profileName">${post.displayName}</h1>
     <p id="profileMail">${post.email}</p>
     `;
-    title.innerHTML = `Plantr | ${post.displayName}`;
+    title.innerHTML = `${post.displayName} - Plantr`;
 }
 function showProfilePostOld(snap) {
     let post = snap.val();
@@ -82,6 +69,7 @@ function showProfilePostOld(snap) {
             </div>
           </section>
           <p class="postText">${post.text}
+          <img class="postImg" src="${post.url}">
         </section>`;
     }
 

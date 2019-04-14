@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="stylesheet.css">
-    <title>Plantr | Home</title>
+    <title>Plantr</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
   </head>
 
@@ -30,6 +30,7 @@
         </div>
       </a>
       <section id="time"></section>
+      <script src="/js/time.js"></script>
       <section id="headerQuotes"></section>
     </header>
     <main>
@@ -58,8 +59,8 @@
           </form>-->
           <form id="skjemaa">
               <input id="inpMelding" type="text" placeholder="What's on your mind?" autocomplete="off" required>
-              <input id="postMakerFile" type="file" accept="image/*">
-                <label id="fileLabel" for="postMakerFile">Choose an image</label>
+              <input id="postMakerFile" type="file" accept="image/*" required>
+                <label id="fileLabel" for="postMakerFile" required>Choose an image</label>
               <input type="submit" id="postSubmit" value="Plant">
           </form>
 
@@ -68,7 +69,6 @@
           Sort posts by
           <button class="sortButton" type="button" onClick="newest()">Newest</button>
           <button class="sortButton" type="button" onClick="oldest()">Oldest</button>
-          <button class="sortButton" type="button">Pictures</button>
         </section>
         <section id="allPosts">
           <section class="post">
@@ -83,7 +83,7 @@
               </div>
             </section>
             <p class="postText">Welcome to <span class="green">Plantr</span> :)</p>
-            <p class="postText">Planr is a website where you can share anything. After you have signed in with Google you can post text and/or pictures. Sort all the posts by using the top right buttons. You can also click on a profilename and see all the persons' posts.</p>
+            <p class="postText">Planr is a website where you can share your images. After you have signed in with Google you can post text and pictures. Sort all the posts by using the top right buttons. You can also click on a profilename and see all the persons' posts.</p>
             <p class="postText">Happy <span class="green">Planting</span> :)</p>
           </section>
         </section>
@@ -93,7 +93,6 @@
         <section id="sortButtons">
           <button class="sortButton" type="button" onClick="newest()">Newest</button>
           <button class="sortButton" type="button" onClick="oldest()">Oldest</button>
-          <button class="sortButton" type="button">Pictures</button>
         </section>
         <section id="allPlants"></section>
       </section>

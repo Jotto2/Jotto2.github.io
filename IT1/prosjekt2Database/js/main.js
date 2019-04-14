@@ -7,12 +7,12 @@ let headerQuotes = document.querySelector("#headerQuotes");
 let inpFile = document.getElementById("postMakerFile");
 let registerButton = document.getElementById("registerButton");
 let secAllPlants = document.getElementById("allPlants");
-let secTime = document.getElementById("time");
 
 // Firebase referanser
 let db = firebase.database();
 let posts = db.ref("posts");
 let plantsInfo = db.ref("plantsInfo");
+let storage = firebase.storage();
 
 
 function visPlants(snapshot){
@@ -36,25 +36,12 @@ let dbQuotes = db.ref("quotesArray");
 
 i = 0;
 setInterval(nextQuote, 5000);
-headerQuotes.innerHTML = `"${allQuotes[0]}"`
+headerQuotes.innerHTML = `"${allQuotes[0]}" - `
 // Funksjonen for quotes
 function nextQuote(){
-  headerQuotes.innerHTML = `"${allQuotes[i]}"`;
+  headerQuotes.innerHTML = `"${allQuotes[i]}" - `;
   i += 1;
   if(i == allQuotes.length){i = 0;};
-}
-
-// Funksjonen for klokken
-setInterval(newTime, 1000);
-function newTime(){
-  var d = new Date();
-  var hour = d.getHours();
-  var minute = d.getMinutes();
-  var second = d.getSeconds();
-  if (second < 10){second = "0" + second;}
-  if (minute < 10){minute = "0" + minute;}
-  if (hour < 10){hour = "0" + hour;}
-  secTime.innerHTML = `- ${hour}:${minute}:${second}`;
 }
 
 // Funksjon som lagrer meldingene
@@ -66,7 +53,7 @@ function lagreMelding(evt) {
     let day = d.getDate();
     let hour = d.getHours();
     let minute = d.getMinutes();
-    evt.preventDefault();
+    let bildeURL = evt;
     posts.push({
         uid: user.uid,
         displayName: user.displayName,
@@ -78,9 +65,19 @@ function lagreMelding(evt) {
         hour: hour,
         minute: minute,
         timestamp: firebase.database.ServerValue.TIMESTAMP,
-        text: inpMelding.value
+        text: inpMelding.value,
+        url:bildeURL
     });
     postMakerForm.reset();
+}
+
+function lastOppBilde(evt){
+    evt.preventDefault();
+    let fil = inpFile.files[0];
+    let lagringsplass = storage.ref("bilder/"+ new Date());
+    lagringsplass.put(fil)
+      .then(snapshot => snapshot.ref.getDownloadURL())
+      .then(url => lagreMelding(url));
 }
 
 // Funksjonene som viser meldingene
@@ -95,6 +92,11 @@ function showMessageNew(snap) {
     if(post.photoURL) {
         bilde = post.photoURL;
     }
+    if(post.url.length < 2){
+      var img = ".";
+    } else{
+      var img = post.url;
+    }
     secAllPosts.innerHTML = `
         <section class="post" id="${id}">
           <section class="postInfo">
@@ -108,7 +110,8 @@ function showMessageNew(snap) {
               <p class="postDate">${post.day}. ${post.month} - ${post.hour}:${post.minute}</p>
             </div>
           </section>
-          <p class="postText">${post.text}
+          <p class="postText">${post.text}</p>
+          <img class="postImg" src="${post.url}">
         </section>
     ` + secAllPosts.innerHTML;
 }
@@ -139,6 +142,7 @@ function showMessageOld(snap) {
             </div>
           </section>
           <p class="postText">${post.text}
+          <img class="postImg" src="${post.url}">
         </section>`;
 }
 
@@ -148,7 +152,7 @@ firebase.auth().onAuthStateChanged( newuser => {
         // Setter user til den innloggede brukeren
         user = newuser;
         // Event Listeners
-        postMakerForm.addEventListener("submit", lagreMelding);
+        postMakerForm.addEventListener("submit", lastOppBilde);
         posts.on("child_added", showMessageNew);
 
         signedIn.innerHTML = `You are signed in as <a href="user.html?id=${user.displayName}" id="logInName">${user.displayName}</a>`;

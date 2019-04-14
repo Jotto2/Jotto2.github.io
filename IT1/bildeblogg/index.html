@@ -35,8 +35,8 @@
       let inpFile = document.getElementById("inpFile");
       let alleBildene = document.getElementById("alleBildene");
 
-      function lagreData(snapshot){
-        let bildeURL = snapshot.downloadURL;//URL hvor vi finner bildet
+      function lagreData(url){
+        let bildeURL = url;//URL hvor vi finner bildet
         let bildetekst = inpBildetekst.value;//Beskrivelse av bildet
         let bildeinfo = {
           "url":bildeURL,
@@ -48,11 +48,14 @@
         evt.preventDefault();
         let fil = inpFile.files[0];//Filen som er valgt
         let lagrinsplass = storage.ref("bilder/" + new Date());//Får et unikt filnavn
-        lagrinsplass.put(fil).then(lagreData);//Passer på å ikke lagre data før bildet er lagret
+        lagrinsplass.put(fil)
+          .then(snapshot => snapshot.ref.getDownloadURL())
+          .then(url => lagreData(url));//Passer på å ikke lagre data før bildet er lagret
       }
       function visAlleBildene(snapshot){
         let bildedata = snapshot.val();
         alleBildene.innerHTML = `<article>
+          <img src=${bildedata.url}>
           <p>${bildedata.tekst}</p>
           </article>
           <hr>` + alleBildene.innerHTML;

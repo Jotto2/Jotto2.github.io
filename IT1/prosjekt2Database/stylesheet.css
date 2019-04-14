@@ -158,7 +158,7 @@ main{
   margin-bottom: 15px;
 }
 #postMakerFile{
-  display: none;
+  display: block;
 }
 #fileLabel{
   background: white;
@@ -166,7 +166,7 @@ main{
   color: #7ce97c;
   border: 1.5px solid #7ce97c;
   border-radius: 10px;
-  margin-top: 50px;
+  margin-top: 0px;
   cursor: pointer;
 }
 #fileLabel:hover{
@@ -246,6 +246,12 @@ main{
   margin-bottom: 10px;
   margin-top: 15px;
 }
+.postImg{
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
 .green{
   color: #7ce97c;
   font-weight: bold;
@@ -258,7 +264,7 @@ main{
 
 /* Post Slutt */
 #sortTextRight{
-  display: block;
+  display: inline;
 }
 #sortButtons{
   margin-top: 5px;
@@ -525,6 +531,9 @@ main{
   #signedInText{
     display: inline;
   }
+  #headerQuotes{
+    display: none;
+  }
 
   main{
     margin-top: 55px;
@@ -591,11 +600,11 @@ main{
     grid-row: span 1;
   }
   .postInfo{
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     height: 75px;
   }
   .postND{
-    grid-column: span 1;
+    grid-column: span 2;
     grid-row: span 1;
   }
   .postName{
@@ -621,5 +630,10 @@ main{
 
   #registerCenter{
     grid-column: span 10;
+  }
+
+  #userProfile{
+    border-radius: 10px;
+    margin-top: 20px;
   }
 }
