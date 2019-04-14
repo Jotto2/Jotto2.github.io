@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="stylesheet.css">
     <title>Plantr</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
+    <link rel="icon" type="image/png" href="pics/ico.png">
   </head>
 
   <body>
@@ -58,9 +59,9 @@
             <input id="postSubmit" type="submit"></input>
           </form>-->
           <form id="skjemaa">
-              <input id="inpMelding" type="text" placeholder="What's on your mind?" autocomplete="off" required>
+              <input id="inpMelding" type="text" placeholder="What's on your mind?" autocomplete="off" >
               <input id="postMakerFile" type="file" accept="image/*" required>
-                <label id="fileLabel" for="postMakerFile" required>Choose an image</label>
+              <label id="fileLabel" for="postMakerFile" required>Choose Image</label>
               <input type="submit" id="postSubmit" value="Plant">
           </form>
 
@@ -73,17 +74,19 @@
         <section id="allPosts">
           <section class="post">
             <section class="postInfo">
-              <img class="postProfilePicture" src="http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png" title="Team Plantr">
+              <a href="user.html?id=Team%20Plantr">
+              <img class="postProfilePicture" src="pics/ico.png" title="Team Plantr">
               <div class="postND">
                 <h1 class="postName" display="inline">
                   <div id="lala">
                     <img src="https://png.pngtree.com/svg/20170116/4c9816379c.png" width="10px" title="Verified">
                   </div>Team Plantr</h1>
+                  </a>
                 <p class="postDate">19.03.2019</p>
               </div>
             </section>
             <p class="postText">Welcome to <span class="green">Plantr</span> :)</p>
-            <p class="postText">Planr is a website where you can share your images. After you have signed in with Google you can post text and pictures. Sort all the posts by using the top right buttons. You can also click on a profilename and see all the persons' posts.</p>
+            <p class="postText">Planr is a website where you can share text and images. After you have signed in with Google you can post text and pictures. Sort all the posts by using the top right buttons. You can also click on a profilename and see all the persons' posts.</p>
             <p class="postText">Happy <span class="green">Planting</span> :)</p>
           </section>
         </section>
@@ -94,7 +97,7 @@
           <button class="sortButton" type="button" onClick="newest()">Newest</button>
           <button class="sortButton" type="button" onClick="oldest()">Oldest</button>
         </section>
-        <section id="allPlants"></section>
+        <!--<section id="allPlants"></section>-->
       </section>
     </main>
     <script src="/js/main.js"></script>

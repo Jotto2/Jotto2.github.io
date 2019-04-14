@@ -14,7 +14,7 @@ let posts = db.ref("posts");
 let plantsInfo = db.ref("plantsInfo");
 let storage = firebase.storage();
 
-
+/*
 function visPlants(snapshot){
   let key = snapshot.key;
   let plant = snapshot.val();
@@ -27,7 +27,7 @@ function visPlants(snapshot){
 }
 
 plantsInfo.orderByKey().on("child_added",visPlants);
-
+*/
 // Definerer user globalt, siden vi skal hente verdier fra den innloggede brukeren
 let user;
 
