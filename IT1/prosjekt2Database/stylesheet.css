@@ -197,6 +197,10 @@ main{
   background: #7bea7b;
   color: white;
 }
+#filename{
+  display: inline;
+  margin-left: 10px;
+}
 #postSubmit{
   background: white;
   float: right;
@@ -274,7 +278,7 @@ main{
   border-radius: 5px;
 }
 .postImg:hover{
-  transform: scale(1.25)
+  transform: scale(1.25);
 }
 .green{
   color: #3bde3b;
