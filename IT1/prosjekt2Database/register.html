@@ -33,17 +33,13 @@
       <section id="time"></section>
       <script src="/js/time.js"></script>
       <section id="headerQuotes"></section>
+      <script src="/js/quotes.js"></script>
     </header>
     <main>
       <section id="mainLeft"></script></section>
       <section id="registerCenter">
-
-
-
-        <p id="registerTitle">Log in to Plantr</p>
+        <p id="registerTitle">Sign in to Plantr</p>
         <div id="firebaseui-auth-container"></div>
-
-        <!-- LIM INN FIREBASE-KODEN DIN HER -->
         <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
         <script>
           // Initialize Firebase
@@ -57,7 +53,6 @@
           };
           firebase.initializeApp(config);
         </script>
-        <!-- DENNE KODEN KOMMER FRA Firebase.auth -->
         <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
         <script type="text/javascript">
@@ -83,11 +78,8 @@
         // The start method will wait until the DOM is loaded.
         ui.start('#firebaseui-auth-container', uiConfig);
         </script>
-
-
       </section>
       <section id="mainRight"></section>
-
     </main>
   </body>
 </html>

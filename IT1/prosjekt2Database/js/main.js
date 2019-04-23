@@ -14,35 +14,8 @@ let posts = db.ref("posts");
 let plantsInfo = db.ref("plantsInfo");
 let storage = firebase.storage();
 
-/*
-function visPlants(snapshot){
-  let key = snapshot.key;
-  let plant = snapshot.val();
-  secAllPlants.innerHTML = secAllPlants.innerHTML + `
-  <section class="plant">
-  <p class="plantName">${plant.name}</p>
-  <img class="plantPic"src="${plant.picture}">
-  <a class="plantLink" href="">Read more</a>
-  </section>`;
-}
-
-plantsInfo.orderByKey().on("child_added",visPlants);
-*/
 // Definerer user globalt, siden vi skal hente verdier fra den innloggede brukeren
 let user;
-
-let allQuotes = ["People are like plants; we all lean toward the light.", "You gotta water your plants. Nobody can water them for you.", "Plant and your spouse plants with you; weed and you weed alone.", "Plants are not like us, and the more you study plants, the more different and deep ways you see that they are not like us.", "Organisms don't think of CO2 as a poison. Plants and organisms that make shells, coral, think of it as a building block.", "I am a gardener, I have a big green thumb, and I can take care of these plants really easily because they are all fake."];
-let dbQuotes = db.ref("quotesArray");
-
-i = 0;
-setInterval(nextQuote, 5000);
-headerQuotes.innerHTML = `"${allQuotes[0]}" - `
-// Funksjonen for quotes
-function nextQuote(){
-  headerQuotes.innerHTML = `"${allQuotes[i]}" - `;
-  i += 1;
-  if(i == allQuotes.length){i = 0;};
-}
 
 // Funksjon som lagrer meldingene
 function lagreMelding(evt) {
@@ -71,6 +44,7 @@ function lagreMelding(evt) {
     postMakerForm.reset();
 }
 
+// Funksjon som lastter opp bildene
 function lastOppBilde(evt){
     evt.preventDefault();
     let fil = inpFile.files[0];

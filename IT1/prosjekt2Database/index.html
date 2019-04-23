@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
     <link rel="icon" type="image/png" href="pics/ico.png">
   </head>
-
   <body>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <script>
@@ -33,38 +32,26 @@
       <section id="time"></section>
       <script src="/js/time.js"></script>
       <section id="headerQuotes"></section>
+      <script src="/js/quotes.js"></script>
     </header>
     <main>
       <section id="mainLeft">
         <section id="leftLogIn">
           <script src="/js/greet.js"></script>
           <p id="signedInText">You are not currently signed in.</p>
-          <a href="register.html"><button class="logInButton" type="button" id="registerButton"></button></a>
+          <a href="register.html"><button type="button" id="registerButton"></button></a>
           <br>
         </section>
       </section>
       <section id="mainCenter">
         <section id="postMaker">
           <p id="postMakerTitle">Plant a post</p>
-          <!--<form id="postMakerForm">
-            <input id="postMakerText" type="text" placeholder="What's on your mind?" autocomplete="off">
-            <input id="postMakerFile" type="file">
-            <label id="fileLabel" for="postMakerFile">
-              <div id="uploadImageBox">
-                <img src="pics/uploadIconGreen.png" id="uploadG">
-                <img src="pics/uploadIconWhite.png" id="uploadW">
-              </div<
-              Choose an image
-            </label>
-            <input id="postSubmit" type="submit"></input>
-          </form>-->
           <form id="skjemaa">
               <input id="inpMelding" type="text" placeholder="What's on your mind?" autocomplete="off" >
               <input id="postMakerFile" type="file" accept="image/*" required>
               <label id="fileLabel" for="postMakerFile" required>Choose Image</label>
               <input type="submit" id="postSubmit" value="Plant">
           </form>
-
         </section>
         <section id="sortMobile">
           Sort posts by
@@ -74,20 +61,18 @@
         <section id="allPosts">
           <section class="post">
             <section class="postInfo">
-              <a href="user.html?id=Team%20Plantr">
               <img class="postProfilePicture" src="pics/ico.png" title="Team Plantr">
               <div class="postND">
                 <h1 class="postName" display="inline">
-                  <div id="lala">
+                  <div id="verified">
                     <img src="https://png.pngtree.com/svg/20170116/4c9816379c.png" width="10px" title="Verified">
                   </div>Team Plantr</h1>
-                  </a>
                 <p class="postDate">19.03.2019</p>
               </div>
             </section>
-            <p class="postText">Welcome to <span class="green">Plantr</span> :)</p>
-            <p class="postText">Planr is a website where you can share text and images. After you have signed in with Google you can post text and pictures. Sort all the posts by using the top right buttons. You can also click on a profilename and see all the persons' posts.</p>
-            <p class="postText">Happy <span class="green">Planting</span> :)</p>
+            <p class="postText">Welcome to <span class="green">Plantr</span> : )</p>
+            <p class="postText">Planr is a website where you can share images, with or without text. After you have signed in with Google you can start posting! Sort all the posts by using the top right buttons. You can also click on a profilename and see all the persons' posts.</p>
+            <p class="postText">Happy <span class="green">Planting</span> : )</p>
           </section>
         </section>
         </section>
@@ -97,7 +82,6 @@
           <button class="sortButton" type="button" onClick="newest()">Newest</button>
           <button class="sortButton" type="button" onClick="oldest()">Oldest</button>
         </section>
-        <!--<section id="allPlants"></section>-->
       </section>
     </main>
     <script src="/js/main.js"></script>

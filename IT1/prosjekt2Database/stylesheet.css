@@ -1,4 +1,3 @@
-/* Styling for alle størrelser */
 *{
     font-family: 'Roboto', 'Quicksand', sans-serif;
     box-sizing: border-box;
@@ -29,17 +28,24 @@ header{
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   right: 0;
+  height: 60px;
 }
 
 /* Logo */
 #mainLogo{
   display: inline;
+  width: 125px;
+  margin-left: 12.5px;
+  margin-top: 3.5px;
 }
 
-/* Hjem-ikon */
+/* Hjem-ikon start */
 .homeIcon{
   display: inline;
   position: absolute;
+  display: inline;
+  margin-left: 50px;
+  margin-top: 10px;
 }
 .homeIcon img{
   position: absolute;
@@ -47,10 +53,15 @@ header{
   left: 0;
   overflow: hidden;
   opacity: 100;
+  width: 40px;
+  height: 40px;
 }
 .homeIcon #home{
   z-index: 9999;
   cursor: pointer;
+  width: 25px;
+  height: 25px;
+  margin: 7.5px;
 }
 .homeIcon .iconHover{
   opacity: 0;
@@ -62,6 +73,7 @@ header{
 .homeIcon:hover .iconHover{
   opacity: 0.75;
 }
+/* Hjem-ikon slutt */
 
 /* Quotes øverst på siden */
 #headerQuotes{
@@ -82,49 +94,34 @@ header{
   color: #7ce97c;
   opacity: 0.75;
 }
-
-/* Login øverst på siden */
-#headerLogIn{
-  float: right;
-}
-.logInButton{
-  border-radius: 10px;
-  color: white;
-  background: #7ce97c;
-  border: 1.5px solid #7ce97c;
-  transition: 0.1s;
-  cursor: pointer;
-}
-.logInButton:hover{
-  background: #62b462;
-  border: 1.5px solid #62b562;
-}
-.logInInput{
-  border-radius: 10px;
-  border: 1.5px solid #7ce97c;
-}
 /* Slutt Header */
 
 /* Start Main*/
 main{
   display: grid;
+  margin-top: 55px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 #mainLeft{
   background: #e6ecf0;
   background-image: linear-gradient(to top, #f1f6fa, #ace6ac);
   background-attachment: fixed;
+  grid-column: span 2;
 }
 #mainCenter{
   background-image: linear-gradient(to top, #f1f6fa, #ace6ac);
   background-attachment: fixed;
   padding-bottom: 20px;
+  grid-column: span 6;
 }
 #mainRight{
   background: #e6ecf0;
   background-image: linear-gradient(to top, #f1f6fa, #ace6ac);
   background-attachment: fixed;
+  grid-column: span 2;
+  padding: 25px;
 }
-  #leftLogIn{
+#leftLogIn{
   background: white;
   border-radius: 10px;
   margin-top: 20px;
@@ -140,22 +137,47 @@ main{
 #logInName{
   color: #7ce97c;
 }
+#registerButton{
+  background: white;
+  padding: 5px;
+  color: #7ce97c;
+  border: 1.5px solid #7ce97c;
+  border-radius: 10px;
+  margin-top: 0px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  padding: 5px;
+  font-size: 15px;
+}
+#registerButton:hover{
+  background: #7ce97c;
+  color: white;
+}
 
-/* Der man lager post */
+/*  Postmaker start */
 #postMaker{
   background: white;
   margin: auto;
   border-radius: 10px;
   color: black;
+  width: 95%;
+  margin-top: 20px;
+  padding: 20px;
+  padding-bottom: 40px;
 }
 #postMakerTitle{
   color: #7ce97c;
   font-size: 30px;
+  margin: 0;
 }
 #inpMelding{
   border: 1px solid #e9e9e9;
   border-radius: 10px;
   margin-bottom: 15px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
 }
 #postMakerFile{
   display: none;
@@ -173,32 +195,6 @@ main{
   background: #7ce97c;
   color: white;
 }
-
-/* Forsøk på ikon i bilde input */
-/*#upoloadImageBox{
-  display: inline;
-}
-#uploadImageBox img{
-  display: inline;
-  position: absolute;
-  width: 20px;
-  overflow: hidden;
-  opacity: 100;
-}
-#uploadImageBox #uploadG{
-  z-index: 9999;
-  cursor: pointer;
-}
-#uploadImageBox #uploadW{
-  opacity: 0;
-  transition: opacity .125s linear;
-}
-#uploadImageBox:hover #uploadG{
-  opacity: 0;
-}
-#uploadImageBox #uploadW{
-  opacity: 100;
-}*/
 #postSubmit{
   background: white;
   float: right;
@@ -208,10 +204,18 @@ main{
   color: white;
   cursor: pointer;
   font-size: 16px;
+  width: 80px;
+  padding: 10px;
+  margin-top: 0;
 }
 #postSubmit:hover{
   background: #62b462;
   border: 1.5px solid #62b562;
+}
+/* Postmaker slutt */
+
+#sortMobile{
+  display: none;
 }
 
 /* Post Start */
@@ -224,23 +228,38 @@ main{
   border-radius: 10px;
   border-bottom: 1.5px solid #e9e9e9;
   border-right: 1.5px solid #e9e9e9;
+  width: 95%;
+  margin-top: 20px;
+  padding: 40px;
+  padding-bottom: 10px;
+  padding-top: 25px;
 }
 .postProfilePicture{
   overflow: hidden;
   border-radius: 50px;
   border: 1.5px solid #e9e9e9;
+  width: 75px;
+  height: 75px;
+  grid-column: span 1;
+  grid-row: span 1;
 }
 .postInfo{
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  height: 75px;
 }
 .postND{
+  grid-column: span 2;
+  grid-row: span 1;
 }
 .postName{
   font-size: 18px;
   color: #7ce97c;
+  margin: 10px 0 0 10px;
 }
 .postDate{
   color: #a7a7a7;
+  margin: 5px 0 0 10px;
 }
 .postText{
   margin-bottom: 10px;
@@ -256,66 +275,41 @@ main{
   color: #7ce97c;
   font-weight: bold;
 }
-#lala{
+#verified{
   float: right;
-  margin-right: 45px;
+  margin-right: 37px;
   width: 10px;
 }
-
 /* Post Slutt */
+
+/* Sort-knappene start */
 #sortTextRight{
   display: inline;
 }
 #sortButtons{
   margin-top: 5px;
+  display: block;
 }
 .sortButton{
   border: 0;
   background: #ffffff;
   border-radius: 2px;
   cursor: pointer;
+  padding: 5px;
+  margin-right: 4px;
 }
 .sortButton:hover{
   background: #e9e9e9;
 }
-#allPlants{
-  background: white;
-  border-radius: 10px;
-}
-.plant{
-  padding: 5px;
-  margin-top: 20px;
-}
-.plantName{
-  font-size: 20px;
-  margin: 10px;
-  text-align: center;
-  color: #7ce97c;
-}
-.plantPic{
-  width: 200px;
-  margin-left: 25px;
-  margin-bottom: 20px;
-}
-.plantLink{
-  background: #7ce97c;
-  border-radius: 10px;
-  color: white;
-  padding: 5px;
-  margin: auto;
-  width: 40%;
-  margin-left: 30%;
-}
-.plantLink:hover{
-  background: #62b462;
-}
-/* Slutt Main */
+/* Sort-knappene slutt */
+/* Main slutt*/
 
-/* Register start */
+/* Log in start */
 #registerCenter{
   grid-column: span 6;
   background: white;
   padding: 100px 10%;
+  height: 93vh;
 }
 #registerTitle{
   font-size: 45px;
@@ -327,7 +321,9 @@ main{
   display: block;
   margin: 10px;
 }
-  /* User start */
+/* Log in slutt */
+
+/* Profil start */
 #userProfile{
   background: white;
   border-bottom-left-radius: 10px;
@@ -354,140 +350,15 @@ main{
   margin-top: 10px;
   color: #a7a7a7;
 }
+/* Profil Slutt */
 
 #secFeedback{
   background: white;
   width: 95%;
   border-radius: 10px;
 }
-/* Størrelser for 1920px skjermer (PC)*/
-@media(max-width:1920px){
-  header{
-    height: 60px;
-  }
-  #mainLogo{
-    width: 125px;
-    margin-left: 12.5px;
-    margin-top: 3.5px;
-  }
-  .homeIcon{
-    display: inline;
-    margin-left: 50px;
-    margin-top: 10px;
-  }
-  .homeIcon img{
-    width: 40px;
-    height: 40px;
-  }
-  .homeIcon #home{
-    width: 25px;
-    height: 25px;
-    margin: 7.5px;
-  }
-  /* Login øverst på siden */
-  #headerLogIn{
-    padding: 15px;
-  }
-  #registerButton{
-    margin-bottom: 10px;
-    margin-left: 30px;
-  }
-  .logInButton{
-    padding: 5px;
-    font-size: 15px;
-  }
-  .logInInput{
-    padding: 5px;
-    margin-right: 5px;
-    font-size: 15px;
-  }
 
-  main{
-    margin-top: 55px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  }
-  #mainLeft{
-    grid-column: span 2;
-  }
-  #mainCenter{
-    grid-column: span 6;
-  }
-  #mainRight{
-    grid-column: span 2;
-    padding: 25px;
-  }
-
-  /* Der man lager post */
-  #postMaker{
-    width: 95%;
-    margin-top: 20px;
-    padding: 20px;
-    padding-bottom: 40px;
-  }
-  #postMakerTitle{
-    margin: 0;
-  }
-  #inpMelding{
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-  }
-  #postSubmit{
-    width: 100px;
-    padding: 10px;
-    margin-top: 0;
-  }
-
-  #sortMobile{
-    display: none;
-  }
-  /* Post Start */
-  .post{
-    width: 95%;
-    margin-top: 20px;
-    padding: 20px;
-    padding-bottom: 5px;
-  }
-  .postProfilePicture{
-    width: 75px;
-    height: 75px;
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-  .postInfo{
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    height: 75px;
-  }
-  .postND{
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-  .postName{
-    margin: 10px 0 0 10px;
-  }
-  .postDate{
-    margin: 5px 0 0 10px;
-  }
-  .like{
-    width: 40px;
-  }
-  /* Post Slutt */
-
-  .sortButton{
-    padding: 5px;
-    margin-right: 4px;
-  }
-  #sortButtons{
-    display: block
-    ;
-  }
-
-  #registerCenter{
-    height: 93vh;
-  }
-}
-
-/* Størrelser for 479px skjermer (Smarttelefon)*/
+/* Størrelser for 491px skjermer (Smarttelefon)*/
 @media(max-width:491px){
   header{
     height: 60px;
@@ -511,22 +382,11 @@ main{
     height: 25px;
     margin: 7.5px;
   }
-  /* Login øverst på siden */
-  #headerLogIn{
-    padding: 15px;
-  }
   #registerButton{
     margin-left: 10px;
     margin-top: 10px;
     font-size: 14px;
-  }
-  .logInButton{
     padding: 5px;
-  }
-  .logInInput{
-    padding: 5px;
-    margin-right: 5px;
-    width: 100px;
   }
   #signedInText{
     display: inline;
@@ -571,13 +431,13 @@ main{
     padding: 10px;
     margin-top: 10px;
   }
-  input[type=file]{
+  #postMakerFile{
     width: 20%;
     padding: 10px;
     margin-top: 10px;
   }
   #postSubmit{
-    width: 100px;
+    width: 80px;
     padding: 10px;
     margin-top: 0;
     font-size: 15px;
@@ -613,11 +473,9 @@ main{
   .postDate{
     margin: 10px 0 0 10px;
   }
-  .like{
-    width: 40px;
-  }
   /* Post Slutt */
 
+  /* Sort-knappene start */
   .sortButton{
     padding: 5px;
     margin-left: 4px;
@@ -630,11 +488,12 @@ main{
   #sortTextRight{
     display: none;
   }
-
+  /* Log in */
   #registerCenter{
     grid-column: span 10;
   }
 
+  /* Profil */
   #userProfile{
     border-radius: 10px;
     margin-top: 20px;
