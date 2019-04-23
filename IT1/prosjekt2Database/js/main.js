@@ -132,10 +132,8 @@ firebase.auth().onAuthStateChanged( newuser => {
         signedIn.innerHTML = `You are signed in as <a href="user.html?id=${user.displayName}" id="logInName">${user.displayName}</a>`;
         registerButton.innerHTML = `Sign in with another account`;
     } else {
-        signedIn.innerHTML = `Welcome to Plantr.<br>
-        Start by signing in.`;
         registerButton.innerHTML = `Sign in with Google`;
-        postMaker.innerHTML = `<br>You need to be signed in before you can post`;
+        postMaker.innerHTML = `<br>You need to be signed in before you can start posting`;
     }
 });
 
