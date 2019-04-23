@@ -181,6 +181,9 @@ main{
   margin-top: 10px;
 }
 #postMakerFile{
+  opacity: 0;
+  z-index: -1;
+  display: relative;
   display: none;
 }
 #fileLabel{
@@ -190,6 +193,7 @@ main{
   border: 1.5px solid #7bea7b;
   border-radius: 10px;
   margin-top: 0px;
+  z-index: 1;
   cursor: pointer;
 }
 #fileLabel:hover{
@@ -366,7 +370,7 @@ main{
 }
 
 /* Størrelser for Smarttelefon */
-@media(max-width:700px){
+@media(max-width:892px){
   header{
     height: 60px;
   }
@@ -479,6 +483,9 @@ main{
   }
   .postDate{
     margin: 10px 0 0 10px;
+  }
+  .postImg:hover{
+    transform: scale(1);
   }
   /* Post Slutt */
 

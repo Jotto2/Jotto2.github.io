@@ -153,11 +153,7 @@ var infoArea = document.getElementById( 'filename' );
 inpFile.addEventListener( 'change', showFileName );
 
 function showFileName( event ) {
-
-  // the change event gives us the input it occurred in
   var inpFile = event.srcElement;
-
-  // the input has an array of files in the `files` property, each one has a name that you can use. We're just using the name here.
   var fileName = inpFile.files[0].name;
   infoArea.innerHTML = `<span class="green">` + fileName + `</span> selected`;
 }

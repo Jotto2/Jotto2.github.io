@@ -6,6 +6,7 @@
     <title>Plantr</title>
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
     <link rel="icon" type="image/png" href="pics/ico.png">
+    <style></style>
   </head>
   <body>
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
@@ -40,16 +41,15 @@
           <script src="js/greet.js"></script>
           <p id="signedInText"></p>
           <a href="register.html"><button type="button" id="registerButton"></button></a>
-          <br>
         </section>
       </section>
       <section id="mainCenter">
         <section id="postMaker">
           <p id="postMakerTitle">Plant a post</p>
           <form id="skjemaa">
-              <input id="inpMelding" type="text" placeholder="What's on your mind?" autocomplete="off" >
+              <input id="inpMelding" type="text" placeholder="Caption" autocomplete="off">
               <input id="postMakerFile" type="file" accept="image/*" required>
-              <label id="fileLabel" for="postMakerFile" required>Choose Image</label>
+              <label id="fileLabel" for="postMakerFile" required>Choose Image (required)</label>
               <div id="filename"></div>
               <input type="submit" id="postSubmit" value="Plant">
           </form>
