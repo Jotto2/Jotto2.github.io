@@ -6,12 +6,12 @@ let signedIn = document.querySelector("#signedInText");
 let headerQuotes = document.querySelector("#headerQuotes");
 let inpFile = document.getElementById("postMakerFile");
 let registerButton = document.getElementById("registerButton");
-let secAllPlants = document.getElementById("allPlants");
+let mainCenter = document.getElementById("mainCenter");
+let postMaker = document.getElementById("postMaker");
 
 // Firebase referanser
 let db = firebase.database();
 let posts = db.ref("posts");
-let plantsInfo = db.ref("plantsInfo");
 let storage = firebase.storage();
 
 // Definerer user globalt, siden vi skal hente verdier fra den innloggede brukeren
@@ -135,6 +135,7 @@ firebase.auth().onAuthStateChanged( newuser => {
         signedIn.innerHTML = `Welcome to Plantr.<br>
         Start by signing in.`;
         registerButton.innerHTML = `Sign in with Google`;
+        postMaker.innerHTML = `<br>You need to be signed in before you can post`;
     }
 });
 

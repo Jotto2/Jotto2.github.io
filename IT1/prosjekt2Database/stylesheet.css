@@ -81,7 +81,7 @@ header{
   padding-top: 19px;
   padding-right: 5px;
   font-style: italic;
-  color: #7ce97c;
+  color: #3bde3b;
   transition: 1s;
   opacity: 0.75;
   font-size: 16px;
@@ -91,7 +91,7 @@ header{
   float: right;
   padding-top: 19px;
   padding-right: 20px;
-  color: #7ce97c;
+  color: #3bde3b;
   opacity: 0.75;
 }
 /* Slutt Header */
@@ -129,19 +129,19 @@ main{
   padding: 10px;
 }
 #greet{
-  color: #7ce97c;
+  color: #3bde3b;
   font-size: 20px;
   margin: 0;
   margin-bottom: 10px;
 }
 #logInName{
-  color: #7ce97c;
+  color: #3bde3b;
 }
 #registerButton{
   background: white;
   padding: 5px;
-  color: #7ce97c;
-  border: 1.5px solid #7ce97c;
+  color: #3bde3b;
+  border: 1.5px solid #3bde3b;
   border-radius: 10px;
   margin-top: 0px;
   cursor: pointer;
@@ -151,7 +151,7 @@ main{
   font-size: 15px;
 }
 #registerButton:hover{
-  background: #7ce97c;
+  background: #3bde3b;
   color: white;
 }
 
@@ -167,7 +167,7 @@ main{
   padding-bottom: 40px;
 }
 #postMakerTitle{
-  color: #7ce97c;
+  color: #3bde3b;
   font-size: 30px;
   margin: 0;
 }
@@ -185,22 +185,22 @@ main{
 #fileLabel{
   background: white;
   padding: 5px;
-  color: #7ce97c;
-  border: 1.5px solid #7ce97c;
+  color: #3bde3b;
+  border: 1.5px solid #3bde3b;
   border-radius: 10px;
   margin-top: 0px;
   cursor: pointer;
 }
 #fileLabel:hover{
-  background: #7ce97c;
+  background: #3bde3b;
   color: white;
 }
 #postSubmit{
   background: white;
   float: right;
   border-radius: 10px;
-  background: #7ce97c;
-  border: 1.5px solid #7ce97c;
+  background: #3bde3b;
+  border: 1.5px solid #3bde3b;
   color: white;
   cursor: pointer;
   font-size: 16px;
@@ -254,7 +254,7 @@ main{
 }
 .postName{
   font-size: 18px;
-  color: #7ce97c;
+  color: #3bde3b;
   margin: 10px 0 0 10px;
 }
 .postDate{
@@ -272,7 +272,7 @@ main{
   border-radius: 5px;
 }
 .green{
-  color: #7ce97c;
+  color: #3bde3b;
 }
 #verified{
   float: right;
@@ -313,7 +313,7 @@ main{
 #registerTitle{
   font-size: 45px;
   margin-top: 0;
-  color: #7ce97c;
+  color: #3bde3b;
   text-align: center;
 }
 .registerInput{
@@ -342,7 +342,7 @@ main{
 #profileName{
   font-size: 30px;
   margin: 20px 0 0 180px;
-  color: #7ce97c;
+  color: #3bde3b;
 }
 #profileMail{
   margin-left: 180px;

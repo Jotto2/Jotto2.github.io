@@ -1,0 +1,21 @@
+body{
+  margin: 0;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+header{
+
+}
+#logo{
+  width: 75px;
+  float: left;
+}
+#menyListe{
+  margin-left: 50px;
+}
+.menyElement{
+  display: inline;
+  margin-right: 50px;
+}
