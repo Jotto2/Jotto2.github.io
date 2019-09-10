@@ -142,5 +142,4 @@ function draw() {
 
     noStroke();
     fill(color.r, color.g, color.b);
-    line(mouseX, mouseY, pencilSize);
   }
