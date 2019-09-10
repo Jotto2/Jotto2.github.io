@@ -142,5 +142,6 @@ function draw() {
 
     noStroke();
     fill(color.r, color.g, color.b);
+    circle(mouseX, mouseY, pencilSize);
   }
 }
