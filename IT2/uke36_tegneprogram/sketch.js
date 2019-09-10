@@ -138,10 +138,12 @@ function draw() {
       color.g = backgroundColor.g;
       color.b = backgroundColor.b;
     }
-
-
-    noStroke();
-    fill(color.r, color.g, color.b);
-    circle(mouseX, mouseY, pencilSize);
   }
+}
+
+function touchMoved() {
+  strokeWeight(10);
+  stroke(color.r, color.g, color.b);
+  line(mouseX, mouseY, pmouseX, pmouseY);
+  return false;
 }
